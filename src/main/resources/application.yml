@@ -1,0 +1,26 @@
+server:
+  port: 7070
+
+spring:
+  application:
+    name: Certificate
+
+
+
+
+  mvc:
+    view:
+      suffix: .html
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/spocert?serverTimezone=UTC&characterEncoding=UTF-8
+    username: spocerti
+    password: 8991
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: mapper/*.xml
+  type-aliases-package: com.spo.certificate.test.dto
+
+storage:
+  receivingPath: D:\spocert\DATA\
