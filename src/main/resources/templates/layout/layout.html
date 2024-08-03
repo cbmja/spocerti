@@ -12,8 +12,8 @@
     <link rel="stylesheet" th:href="@{/css/layout-css/header.css}"><!--헤더-->
     <link rel="stylesheet" th:href="@{/css/layout-css/navbar.css}"><!--네비-->
     <link rel="stylesheet" th:href="@{/css/layout-css/footer.css}"><!--푸터-->
-    <link rel="stylesheet" th:href="@{/css/view-css/main-profile.css}"><!--메인 프로필-->
-    <link rel="stylesheet" th:href="@{/css/view-css/review.css}"><!--리뷰-->
+    <link rel="stylesheet" th:href="@{/css/view-css/content-area-1.css}"><!--메인 프로필-->
+    <link rel="stylesheet" th:href="@{/css/view-css/content-area-2.css}"><!--리뷰-->
     <!-- 메인 화면 css -->
 <style>
 
@@ -28,11 +28,11 @@
     <!-- 네비 -->
     <th:block th:replace="~{layout/navbar :: navbar}"></th:block>
 
-    <!-- 메인 프로필 -->
-    <th:block th:replace="~{view/main-profile :: main-profile}"></th:block>
+    <!-- 컨텐츠1 -->
+    <th:block th:replace="~{view/content-area-1 :: content-area-1}"></th:block>
 
-    <!-- 후기 -->
-    <th:block th:replace="~{view/review :: review}"></th:block>
+    <!-- 컨텐츠2 -->
+    <th:block th:replace="~{view/content-area-2 :: content-area-2}"></th:block>
 
     <!-- 컨텐츠 -->
     <th:block layout:fragment="content"></th:block>

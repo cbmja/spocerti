@@ -1,0 +1,6 @@
+.content-area-1{
+    width: 100%;
+    height: 320px;
+    background-color: #ff6d5a;
+    border-bottom: 1px solid #d5dbd5; /* 하단 경계선 */
+}

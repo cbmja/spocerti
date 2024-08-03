@@ -1,0 +1,23 @@
+.content-area-2{
+    height: 65px;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: #fdfffc;
+    justify-content: center;
+    align-items: center; /* 수직 중앙 정렬 */
+    border-bottom: 1px solid #d5dbd5; /* 하단 경계선 */
+}
+
+.square-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #90d699;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 35px;
+    background-color: #ffffff;
+    text-align: center;
+    border-radius: 30px;
+}

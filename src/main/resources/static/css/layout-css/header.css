@@ -2,8 +2,8 @@
 .header-area {
     width: 100%;
     height: 40px;
-    background-color: #f2faf3;
-    border-bottom: 1px solid #90d699; /* 하단 경계선 */
+    background-color: #ffffff;
+    border-bottom: 1px solid #d5dbd5; /* 하단 경계선 */
     display: flex;
     align-items: center; /* 수직 중앙 정렬 */
 }
@@ -14,3 +14,20 @@
 .header-content{
     height: 100%;
 }
+
+.header-text{
+    color: #7a7d78;
+}
+
+.header-text:hover{
+    color: #080a07;
+}
+
+.header-text-bar{
+    color: rgba(122, 125, 120, 0.7);
+    font-size: 13px;
+}
+.header-text-bar:hover{
+    cursor: default;
+}
+
