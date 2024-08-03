@@ -1,9 +1,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<section th:fragment="header">
+<section th:fragment="header" class="header-area">
 
-<header class="header-bar fixed-area">
-dfgdf
-</header>
+    <div class="container-fluid header-content">
+        <div class="d-flex align-items-center">
+            <!-- 좌측 -->
+            <a class="nav-link me-2" href="#">Values</a>
+            <a class="nav-link me-2" href="#">Career</a>
+            <a class="nav-link me-2" href="#">Contact</a>
 
+            <!-- 우측 -->
+            <div class="ms-auto d-flex align-items-center">
+                <a class="nav-link me-2" href="#">Our-story</a>
+                <a class="nav-link me-2" href="#">history</a>
+            </div>
+        </div>
+    </div>
 </section>
 </html>

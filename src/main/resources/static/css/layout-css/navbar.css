@@ -1,0 +1,9 @@
+/* 네비 영역 */
+.navbar{
+     background-color: #f5faf6;
+}
+
+/* 검색 폼 */
+.nav-search-box{
+    width: 50%;
+}
