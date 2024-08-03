@@ -18,11 +18,10 @@
 
     <!--헤더-->
     <th:block th:replace="~{layout/header :: header}"></th:block>
-
-
-<section class="safe-area">
     <!-- 네비 -->
     <th:block th:replace="~{layout/navbar :: navbar}"></th:block>
+
+<section class="safe-area">
 
     <!-- 컨텐츠 -->
     <th:block layout:fragment="content"></th:block>

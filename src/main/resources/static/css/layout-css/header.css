@@ -1,11 +1,8 @@
 /* 헤더 영역 */
 .header-area {
-    position: fixed;
-    top: 0;
     width: 100%;
     height: 40px;
     background-color: #f2faf3;
-    z-index: 1000;
     border-bottom: 1px solid #90d699; /* 하단 경계선 */
     display: flex;
     align-items: center; /* 수직 중앙 정렬 */
