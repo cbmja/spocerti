@@ -6,9 +6,15 @@
     <title>Title</title>
 
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+
+    <!-- 메인 화면 css -->
     <link rel="stylesheet" th:href="@{/css/layout-css/common.css}"><!--레이아웃 공통-->
     <link rel="stylesheet" th:href="@{/css/layout-css/header.css}"><!--헤더-->
     <link rel="stylesheet" th:href="@{/css/layout-css/navbar.css}"><!--네비-->
+    <link rel="stylesheet" th:href="@{/css/layout-css/footer.css}"><!--푸터-->
+    <link rel="stylesheet" th:href="@{/css/view-css/main-profile.css}"><!--메인 프로필-->
+    <link rel="stylesheet" th:href="@{/css/view-css/review.css}"><!--리뷰-->
+    <!-- 메인 화면 css -->
 <style>
 
 </style>
@@ -18,17 +24,23 @@
 
     <!--헤더-->
     <th:block th:replace="~{layout/header :: header}"></th:block>
+
     <!-- 네비 -->
     <th:block th:replace="~{layout/navbar :: navbar}"></th:block>
 
-<section class="safe-area">
+    <!-- 메인 프로필 -->
+    <th:block th:replace="~{view/main-profile :: main-profile}"></th:block>
+
+    <!-- 후기 -->
+    <th:block th:replace="~{view/review :: review}"></th:block>
 
     <!-- 컨텐츠 -->
     <th:block layout:fragment="content"></th:block>
 
+
+
     <!--푸터-->
     <th:block th:replace="~{layout/footer :: footer}"></th:block>
-</section>
 
 
 
