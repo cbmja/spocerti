@@ -6,6 +6,7 @@
     display: flex;
     align-items: flex-end;
     flex-direction: column;
+    border-bottom: 1px solid #d5dbd5;
 }
 .title-area{
     display: flex;
