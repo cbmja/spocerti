@@ -1,9 +1,12 @@
 .content-area-2{
     height: 65px;
     width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
-    background-color: #fdfffc;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between; /* 요소들 사이에 고정된 간격 */
+    align-items: center; /* 수직 중앙 정렬 */
     justify-content: center;
     align-items: center; /* 수직 중앙 정렬 */
     border-bottom: 1px solid #d5dbd5; /* 하단 경계선 */
@@ -13,11 +16,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #90d699;
+    border: 1px solid #8d948e;
     padding-left: 20px;
     padding-right: 20px;
     height: 35px;
     background-color: #ffffff;
     text-align: center;
     border-radius: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.square-div:hover{
+    cursor: pointer;
+    background-color: #8d948e;
+}
+
+.square-div:hover .a-2-text {
+    color: #ffffff;
+}
+
+.a-2-text{
+    color: #8d948e;
+    font-weight: bold;
+    text-decoration: none;
 }
