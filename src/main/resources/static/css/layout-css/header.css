@@ -10,7 +10,10 @@
 .d-flex.align-items-center {
     height: 100%; /* 플렉스 박스의 전체 높이 */
 }
-
+.container-fluid{
+    padding-left: 10px;
+    padding-right: 10px;
+}
 .header-content{
     height: 100%;
 }

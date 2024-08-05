@@ -1,40 +1,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <nav class="navbar navbar-expand-lg" th:fragment="navbar">
-    <div class="container-fluid">
+    <!-- 메인 로고 -->
+    <a class="navbar-brand" href="#">로고</a>
 
-            <!-- 메인 로고 -->
-            <a class="navbar-brand" href="#">로고</a>
+    <div class="d-flex">
+        <div class="p-2">세미나</div>
+        <div class="p-2">강의</div>
+        <div class="p-2">공지</div>
+        <div class="p-2">문의</div>
+        <div class="p-2">커뮤니티</div>
+    </div>
 
-            <!-- 네비 메뉴 -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link nav-text" href="#">필기</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-text disabled" href="#">세미나</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-text disabled" href="#">강의</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-text" href="#">공지</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-text" href="#">문의</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-text" href="#">커뮤니티</a>
-                </li>
-            </ul>
-        </div>
 
         <!-- 검색폼 -->
-        <form class="d-flex nav-search-box" role="search">
-            <input class="form-control me-2 nav-search" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success nav-submit" type="submit">검색</button>
-        </form>
+    <form class="d-flex nav-search-box" role="search">
+        <input class="form-control me-2 nav-search" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success nav-submit" type="submit">검색</button>
+    </form>
 
-    </div>
 </nav>
 </html>
