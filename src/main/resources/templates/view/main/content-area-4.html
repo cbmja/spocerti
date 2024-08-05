@@ -1,24 +1,37 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <section th:fragment="content-area-4" class="content-area-4">
 
-<div class="area-4-content">
-    <div class="area-4-a">
-        <div class="area-4-a-title"><h3>필기</h3></div>
-        <button type="button" class="btn btn-outline-success area-4-btn">전문스포츠지도사</button>
-        <button type="button" class="btn btn-outline-success area-4-btn">생활스포츠지도사</button>
-        <button type="button" class="btn btn-outline-success area-4-btn">건강운동관리사</button>
-        <button type="button" class="btn btn-outline-success area-4-btn">장애인스포츠지도사</button>
-        <button type="button" class="btn btn-outline-success area-4-btn">유소년스포츠지도사</button>
-        <button type="button" class="btn btn-outline-success area-4-btn">노인스포츠지도사</button>
+<div class="area-4">
+    <div class="area-4-title">
+        <h2>
+            시험을 선택해 주세요
+        </h2>
     </div>
-    <div class="area-4-a">
-        <div class="area-4-a-title"><h3>답안</h3></div>
-        <button type="button" class="btn btn-outline-info area-4-btn">전문스포츠지도사</button>
-        <button type="button" class="btn btn-outline-info area-4-btn">생활스포츠지도사</button>
-        <button type="button" class="btn btn-outline-info area-4-btn">건강운동관리사</button>
-        <button type="button" class="btn btn-outline-info area-4-btn">장애인스포츠지도사</button>
-        <button type="button" class="btn btn-outline-info area-4-btn">유소년스포츠지도사</button>
-        <button type="button" class="btn btn-outline-info area-4-btn">노인스포츠지도사</button>
+
+    <div class="container mt-1">
+        <form class="test-option-form d-flex">
+            <select class="form-select test-option1">
+                <option value="1" disabled selected>A/B</option>
+                <option value="2">A</option>
+                <option value="3">B</option>
+            </select>
+            <select class="form-select test-option2">
+                <option value="1" disabled selected>년도</option>
+                <option value="2">2015</option>
+                <option value="3">2016</option>
+                <option value="3">2017</option>
+                <option value="3">2018</option>
+            </select>
+            <select class="form-select test-option3">
+                <option value="1" disabled selected>시험명</option>
+                <option value="2">건강운동관리사</option>
+                <option value="3">1급 전문스포츠지도사</option>
+                <option value="3">2급 전문스포츠지도사</option>
+                <option value="3">1급 생활스포츠지도사</option>
+                <option value="3">2급 생활스포츠지도사</option>
+            </select>
+            <button type="submit" class="btn btn-outline-primary area-4-submit">찾기</button>
+        </form>
     </div>
 </div>
 
