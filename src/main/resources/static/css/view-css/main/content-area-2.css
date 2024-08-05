@@ -29,7 +29,8 @@
 
 .square-div:hover{
     cursor: pointer;
-    background-color: #8d948e;
+    background-color: #1dc078;
+    border: 1px solid #1dc078;
 }
 
 .square-div:hover .a-2-text {

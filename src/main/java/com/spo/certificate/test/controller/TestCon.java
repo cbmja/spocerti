@@ -9,6 +9,12 @@ public class TestCon {
     @GetMapping("/test")
     public String test(){
 
-        return "view/test";
+        return "view/main/main";
+    }
+
+    @GetMapping("/test/list")
+    public String list(){
+
+        return "view/test/test-list";
     }
 }
