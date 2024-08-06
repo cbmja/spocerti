@@ -56,4 +56,19 @@
     z-index: 1000;
     width: 100%;
 }
+.download-test:hover{
+    cursor: pointer !important;
+    color: #297bff !important;
+}
+.download-test{
+    color: #297bff;
+}
+.test-btn{
+    border: 1px solid #297bff;
+}
+.test-btn:hover{
+    background-color: #297bff;
+    color: #ffffff;
+}
+
 
