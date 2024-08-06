@@ -26,6 +26,7 @@
     border: 1px solid #297bff; /* 푸른색 테두리 */
     padding: 10px; /* 폼 내부 여백 */
     border-radius: 5px; /* 둥근 모서리 */
+    background-color: #ecf5fa;
 }
 .test-option1{
     width: 15%;
@@ -44,6 +45,12 @@
 }
 .area-4-submit{
     width: 20%;
+    background-color: #ffffff;
+    border: 1px solid #297bff;
+}
+.area-4-submit:hover{
+    background-color: #297bff;
+    color: #ffffff;
 }
 .area-4-table{
     width: 100%;

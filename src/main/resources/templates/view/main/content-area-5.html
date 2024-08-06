@@ -2,14 +2,14 @@
 <section th:fragment="content-area-5" class="content-area-5">
 
 <div class="area-5-content">
-    <div class="area-4-title">
+    <div class="area-5-title">
         <h2> 시험별 응시 과목 </h2>
     </div>
 
-    <div class="area-4-sub-title">
+    <div class="area-5-sub-title">
         <div class="sub-title-area">
-            <form class="d-flex area-4-form" style=" margin-right: 15px;">
-                <select class="form-select">
+            <form class="d-flex area-5-form" style=" margin-right: 15px;">
+                <select class="form-select area-5-option">
                     <option value="1" disabled selected>시험명</option>
                     <option value="2">건강운동관리사</option>
                     <option value="3">1급 장애인스포츠지도사</option>
@@ -17,7 +17,7 @@
                     <option value="3">1급 생활스포츠지도사</option>
                     <option value="3">2급 생활스포츠지도사</option>
                 </select>
-                <button type="submit" class="btn btn-outline-primary" style="width: 75px; margin-left: 5px; padding-left: 2px; padding-right: 2px;">찾기</button>
+                <button type="submit" class="btn area-5-submit" style="width: 75px; margin-left: 5px; padding-left: 2px; padding-right: 2px;">찾기</button>
             </form>
             <div class="rounded-box required-color">
                 필수
@@ -38,7 +38,55 @@
 
     </div>
 
-    <div style="width: 100%; height: 300px; background-color: black;" class="mt-1">
+    <div style="width: 100%; height: 300px;" class="mt-1">
+
+        <table class="table table-bordered">
+            <tbody>
+            <tr>
+                <td class="selected-required">건강·체력 평가
+                    <span style="display: inline-block; border-radius: 5px; height: 25px; background-color: #ff0f00; padding-left: 3px; padding-right: 3px; color: #ffffff;">필수</span>
+                </td>
+                <td>건강교육론</td>
+                <td class="selected-optional">
+                    기능해부학
+                    <span style="display: inline-block; border-radius: 5px; height: 25px; background-color: #faac02; padding-left: 3px; padding-right: 3px; color: #ffffff;">선택</span>
+                </td>
+                <td>노인체육론</td>
+            </tr>
+            <tr>
+                <td>병태생리학</td>
+                <td>스포츠교육학</td>
+                <td>스포츠사회학</td>
+                <td>스포츠심리학</td>
+            </tr>
+            <tr>
+                <td>스포츠영양학</td>
+                <td>스포츠윤리</td>
+                <td>운동부하검사</td>
+                <td>운동상해</td>
+            </tr>
+            <tr>
+                <td>운동생리학</td>
+                <td>운동역학</td>
+                <td>운동처방론</td>
+                <td>유아체육론</td>
+            </tr>
+            <tr>
+                <td>장애인스포츠론</td>
+                <td class="selected-required">체육측정평가론
+                    <span style="display: inline-block; border-radius: 5px; height: 25px; background-color: #ff0f00; padding-left: 3px; padding-right: 3px; color: #ffffff;">필수</span>
+                </td>
+                <td>트레이닝론</td>
+                <td>특수체육론</td>
+            </tr>
+            <tr>
+                <td>한국체육사</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
 
     </div>
 
