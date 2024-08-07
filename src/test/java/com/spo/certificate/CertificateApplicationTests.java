@@ -1,7 +1,7 @@
 package com.spo.certificate;
 
-import com.spo.certificate.exam.service.examSubject.ExamSubjectService;
-import com.spo.certificate.exam.service.examTitle.ExamTitleService;
+import com.spo.certificate.exam.service.examSubject.SubjectService;
+import com.spo.certificate.exam.service.examTitle.ExamService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,10 +10,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 class CertificateApplicationTests {
 
 	@Autowired
-	private ExamSubjectService examSubjectService;
+	private SubjectService subjectService;
 
 	@Autowired
-	private ExamTitleService examTitleService;
+	private ExamService examService;
 
 
 	@Test
@@ -21,8 +21,8 @@ class CertificateApplicationTests {
 
 
 
-		System.out.println(examSubjectService.findById(1));
-		System.out.println(examTitleService.findById(1));
+		System.out.println(subjectService.findById(1));
+		System.out.println(examService.findById(1));
 
 	}
 

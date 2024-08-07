@@ -3,7 +3,7 @@ package com.spo.certificate.exam.dto;
 import lombok.Data;
 
 @Data
-public class ExamTitle {
+public class Exam {
 
     private int id;
     private String examTitle;
