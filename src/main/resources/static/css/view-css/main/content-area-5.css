@@ -63,6 +63,9 @@
     width: 20%;
     background-color: #ffffff;
     border: 1px solid #297bff;
+    margin-right: 5px;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
 }
 .area-5-submit:hover{
     background-color: #297bff;
@@ -70,6 +73,7 @@
 }
 .area-5-option{
     border: 1px solid #297bff;
+    width: 400px;
 }
 .selected-required{
     background-color: #fcefed !important;
