@@ -12,15 +12,11 @@ public class TestCon {
         return "view/main/main";
     }
 
-    @GetMapping("/test/list")
-    public String list(){
 
-        return "view/test/test-list";
+    @GetMapping("/layout")
+    public String layout(){
+
+        return "layouts/layout";
     }
 
-    @GetMapping("/test/test")
-    public String test(){
-
-        return "view/test/test";
-    }
 }

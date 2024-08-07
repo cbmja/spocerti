@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<nav class="navbar navbar-expand-lg" th:fragment="navbar">
+    <!-- 메인 로고 -->
+    <a class="navbar-brand" href="#">로고</a>
+
+    <div class="d-flex">
+        <div class="p-2"><a class="nav-text">세미나</a></div>
+        <div class="p-2"><a class="nav-text">강의</a></div>
+        <div class="p-2"><a class="nav-text">공지</a></div>
+        <div class="p-2"><a class="nav-text">문의</a></div>
+        <div class="p-2"><a class="nav-text">커뮤니티</a></div>
+    </div>
+
+
+        <!-- 검색폼 -->
+    <form class="d-flex nav-search-box" role="search">
+        <input class="form-control me-2 nav-search" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success nav-submit" type="submit">검색</button>
+    </form>
+
+</nav>
+</html>
