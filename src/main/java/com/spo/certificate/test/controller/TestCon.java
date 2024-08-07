@@ -12,6 +12,12 @@ public class TestCon {
         return "view/main/main";
     }
 
+    @GetMapping("/testt")
+    public String indext(){
+
+        return "test";
+    }
+
 
     @GetMapping("/layout")
     public String layout(){

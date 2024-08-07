@@ -8,22 +8,19 @@
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 
     <!-- 공통 css -->
-    <link rel="stylesheet" th:href="@{/css/layout-css/common.css}"><!--레이아웃 공통-->
-    <link rel="stylesheet" th:href="@{/css/layout-css/header.css}"><!--헤더-->
-    <link rel="stylesheet" th:href="@{/css/layout-css/navbar.css}"><!--네비-->
-    <link rel="stylesheet" th:href="@{/css/layout-css/footer.css}"><!--푸터-->
+    <link rel="stylesheet" th:href="@{/css/layout/common.css}"><!--레이아웃 공통-->
+    <link rel="stylesheet" th:href="@{/css/layout/header.css}"><!--헤더-->
+    <link rel="stylesheet" th:href="@{/css/layout/navbar.css}"><!--네비-->
+    <link rel="stylesheet" th:href="@{/css/layout/footer.css}"><!--푸터-->
     <!-- 공통 css -->
 
     <!-- main 화면 css -->
-    <link rel="stylesheet" th:href="@{/css/view-css/main/content-area-1.css}"><!--컨텐츠1-->
-    <link rel="stylesheet" th:href="@{/css/view-css/main/content-area-2.css}"><!--컨텐츠2-->
-    <link rel="stylesheet" th:href="@{/css/view-css/main/content-area-3.css}"><!--컨텐츠3-->
-    <link rel="stylesheet" th:href="@{/css/view-css/main/content-area-4.css}"><!--컨텐츠4-->
-    <link rel="stylesheet" th:href="@{/css/view-css/main/content-area-5.css}"><!--컨텐츠5-->
+    <link rel="stylesheet" th:href="@{/css/view/main/exam-list.css}"><!--시험 목록-->
+    <link rel="stylesheet" th:href="@{/css/view/main/subject-table.css}"><!--필수 과목 테이블-->
     <!-- 메인 화면 css -->
 
     <!-- test-list css -->
-    <link rel="stylesheet" th:href="@{/css/view-css/test/test-list.css}"><!--컨텐츠5-->
+    <link rel="stylesheet" th:href="@{/css/view-css/test/test-list.css}">
     <!-- test-list css -->
 <style>
 
@@ -39,7 +36,7 @@
     <th:block th:replace="~{layout/navbar :: navbar}"></th:block>
 
     <!-- 컨텐츠 -->
-    <div layout:fragment="content">
+    <div layout:fragment="content" class="safe-ar">
 
     </div>
 
