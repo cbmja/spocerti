@@ -45,15 +45,18 @@ function updatePage(data) {
             for (var j = i; j < i + 4 && j < data.examSubjectList.length; j++) {
                 let cellContent = data.examSubjectList[j].subjectTitle;
                 let spanContent = '';
+                let className = '';
 
-                // 필수 과목 또는 선택 과목에 따른 span 추가
+                // 필수 과목 또는 선택 과목에 따른 span 및 class 추가
                 if (data.requiredSubjects.includes(data.examSubjectList[j].id)) {
+                    className = 'selected-required';
                     spanContent = '<span style="display: inline-block; border-radius: 5px; height: 25px; background-color: #ff0f00; color: #ffffff; float: right;">필수</span>';
                 } else if (data.electiveSubjects.includes(data.examSubjectList[j].id)) {
+                    className = 'selected-optional';
                     spanContent = '<span style="display: inline-block; border-radius: 5px; height: 25px; background-color: #faac02; color: #ffffff; float: right;">선택</span>';
                 }
 
-                tableContent += `<td>${cellContent}${spanContent}</td>`;
+                tableContent += `<td class="${className}">${cellContent}${spanContent}</td>`;
             }
             tableContent += '</tr>'; // 행 끝
         }
@@ -62,4 +65,5 @@ function updatePage(data) {
         tableBody.innerHTML = tableContent;
     }
 }
+
 
