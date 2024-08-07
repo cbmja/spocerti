@@ -2,7 +2,7 @@ window.onload=function(){
     examId = "1";
 
     if(examId === "0") {
-        alert("시험명을 선택하세요.");
+        alert("시험을 선택하세요.");
         return;
     }
 
