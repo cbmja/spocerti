@@ -1,15 +1,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <section th:fragment="content-area-5" class="content-area-5">
+    <div class="area-5-content">
+        <div class="area-5-title">
+            <h2>시험별 응시 과목</h2>
+        </div>
 
-<div class="area-5-content">
-    <div class="area-5-title">
-        <h2> 시험별 응시 과목 </h2>
-    </div>
-
-    <div class="area-5-sub-title">
-        <div class="sub-title-area">
-            <form class="d-flex area-5-form" style=" margin-right: 15px;" action="/main">
-                <select name="examId" class="form-select area-5-option">
+        <div class="area-5-sub-title">
+            <div class="sub-title-area">
+                <!-- 기존 form을 제거하고 AJAX를 위한 select 및 button을 사용 -->
+                <select id="examSelect" class="form-select area-5-option">
                     <option value="0" disabled selected>시험명</option>
                     <option value="1">1급_전문스포츠지도사</option>
                     <option value="2">2급_전문스포츠지도사</option>
@@ -21,58 +20,37 @@
                     <option value="8">1급_장애인스포츠지도사</option>
                     <option value="9">2급_장애인스포츠지도사</option>
                 </select>
-                <button type="submit" class="btn area-5-submit" style="width: 75px; margin-left: 5px; padding-left: 2px; padding-right: 2px;">찾기</button>
-            </form>
-            <div class="rounded-box required-color">
-                필수
-            </div>
+                <button id="searchButton" class="btn area-5-submit" style="width: 75px; margin-left: 5px; padding-left: 2px; padding-right: 2px;">찾기</button>
 
-            <div class="sub-title-content">
-                [[${requiredSubjects.size()}]]과목
-            </div>
+                <div class="rounded-box required-color">
+                    필수
+                </div>
 
-            <div class="rounded-box optional-color">
-                선택
-            </div>
+                <div class="sub-title-content" id="requiredSubjectCount">
+                    [[${requiredSubjects.size()}]]과목
+                </div>
 
-            <div class="sub-title-content">
-                [[${electiveSubjects.size()}]]과목
+                <div class="rounded-box optional-color">
+                    선택
+                </div>
+
+                <div class="sub-title-content" id="electiveSubjectCount">
+                    [[${electiveSubjects.size()}]]과목
+                </div>
             </div>
         </div>
 
+        <div class="mt-1 subject-area">
+            <table class="table table-bordered">
+                <tbody id="subjectTableBody">
+                <!-- 과목 데이터가 여기에 삽입될 예정 -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="subject-title">
+            <h3 id="examTitle">[[${exam.examTitle}]]의 응시 과목 입니다.</h3>
+        </div>
     </div>
-    <div class="mt-1 subject-area">
-        <table class="table table-bordered">
-            <tbody>
-            <tr th:each="i : ${#numbers.sequence(0, examSubjectList.size() - 1, 4)}">
-                <!-- 해당 <tr>에 속하는 4개의 <td> 생성 -->
-                <td th:each="j : ${#numbers.sequence(i, i + 3)}"
-                    th:if="${j < examSubjectList.size()}"
-                    th:data-id="${examSubjectList[j].id}"
-                    th:classappend="${#lists.contains(requiredSubjects, examSubjectList[j].id) ? 'selected-required' : ''}+${#lists.contains(electiveSubjects, examSubjectList[j].id) ? 'selected-optional' : ''}">
-                    <!-- 과목 제목 출력 -->
-                    [[ ${examSubjectList[j].subjectTitle} ]]
-                    <!-- electiveSubjects에 포함된 경우 '필수' 스팬 추가 -->
-                    <span th:if="${#lists.contains(requiredSubjects, examSubjectList[j].id)}"
-                          style="display: inline-block; border-radius: 5px; height: 25px; background-color: #ff0f00; color: #ffffff; float: right;">
-                        필수
-                    </span>
-                    <span th:if="${#lists.contains(electiveSubjects, examSubjectList[j].id)}"
-                          style="display: inline-block; border-radius: 5px; height: 25px; background-color: #faac02; color: #ffffff; float: right;">
-                          선택
-                    </span>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-
-
-    <div class="subject-title">
-        <h3>[[${exam.examTitle}]]의 응시 과목 입니다.</h3>
-    </div>
-
-
-</div>
 </section>
 </html>
