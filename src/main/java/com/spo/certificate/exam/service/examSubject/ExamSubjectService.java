@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ExamSubjectService {
@@ -15,6 +17,11 @@ public class ExamSubjectService {
     public ExamSubject findById(int id){
 
         return sql.selectOne("com.spo.certificate.exam.mapper.ExamSubjectMapper.findById",id);
+    }
+
+    public List<ExamSubject> findAll(){
+
+        return sql.selectList("com.spo.certificate.exam.mapper.ExamSubjectMapper.findAll");
     }
 
 }

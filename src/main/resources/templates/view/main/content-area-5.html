@@ -37,8 +37,37 @@
         </div>
 
     </div>
+    <div class="mt-1 subject-area">
+        <table class="table table-bordered">
+            <tbody>
+            <tr th:each="i : ${#numbers.sequence(0, examSubjectList.size() - 1, 4)}">
+                <!-- 해당 <tr>에 속하는 4개의 <td> 생성 -->
+                <td th:each="j : ${#numbers.sequence(i, i + 3)}"
+                    th:if="${j < examSubjectList.size()}"
+                    th:data-id="${examSubjectList[j].id}"
+                    th:classappend="${#lists.contains(requiredSubjects, examSubjectList[j].id) ? 'selected-required' : ''}
+                                    ${#lists.contains(electiveSubjects, examSubjectList[j].id) ? 'selected-optional' : ''}">
+                    <!-- 과목 제목 출력 -->
+                    <span th:text="${examSubjectList[j].subjectTitle}"></span>
 
-    <div style="width: 100%;" class="mt-1">
+                    <!-- electiveSubjects에 포함된 경우 '필수' 스팬 추가 -->
+                    <span th:if="${#lists.contains(requiredSubjects, examSubjectList[j].id)}"
+                          style="display: inline-block; border-radius: 5px; height: 25px; background-color: #ff0f00; padding-left: 3px; padding-right: 3px; color: #ffffff;">
+                        필수
+                    </span>
+                    <span th:if="${#lists.contains(electiveSubjects, examSubjectList[j].id)}"
+                          style="display: inline-block; border-radius: 5px; height: 25px; background-color: #faac02; padding-left: 3px; padding-right: 3px; color: #ffffff;">
+                          선택
+                    </span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+<!--
+    <div class="mt-1 subject-area">
         <table class="table table-bordered">
             <tbody>
             <tr>
@@ -87,6 +116,7 @@
             </tbody>
         </table>
     </div>
+-->
 
     <div class="subject-title">
         <h3>건강운동관리사의 응시 과목 입니다.</h3>
