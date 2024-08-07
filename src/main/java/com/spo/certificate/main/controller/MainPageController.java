@@ -35,6 +35,7 @@ public class MainPageController {
         System.out.println(electiveSubjects);
         System.out.println(requiredSubjects);
 
+        model.addAttribute("exam" ,examTitle);
         model.addAttribute("electiveSubjects",electiveSubjects); //선택과목
         model.addAttribute("requiredSubjects",requiredSubjects); //필수과목
         model.addAttribute("examSubjectList" ,examSubjectList); //모든 과목

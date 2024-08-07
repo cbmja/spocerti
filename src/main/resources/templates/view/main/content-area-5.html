@@ -24,7 +24,7 @@
             </div>
 
             <div class="sub-title-content">
-                4과목
+                [[${requiredSubjects.size()}]]과목
             </div>
 
             <div class="rounded-box optional-color">
@@ -32,7 +32,7 @@
             </div>
 
             <div class="sub-title-content">
-                2과목
+                [[${electiveSubjects.size()}]]과목
             </div>
         </div>
 
@@ -45,18 +45,16 @@
                 <td th:each="j : ${#numbers.sequence(i, i + 3)}"
                     th:if="${j < examSubjectList.size()}"
                     th:data-id="${examSubjectList[j].id}"
-                    th:classappend="${#lists.contains(requiredSubjects, examSubjectList[j].id) ? 'selected-required' : ''}
-                                    ${#lists.contains(electiveSubjects, examSubjectList[j].id) ? 'selected-optional' : ''}">
+                    th:classappend="${#lists.contains(requiredSubjects, examSubjectList[j].id) ? 'selected-required' : ''}+${#lists.contains(electiveSubjects, examSubjectList[j].id) ? 'selected-optional' : ''}">
                     <!-- 과목 제목 출력 -->
-                    <span th:text="${examSubjectList[j].subjectTitle}"></span>
-
+                    [[ ${examSubjectList[j].subjectTitle} ]]
                     <!-- electiveSubjects에 포함된 경우 '필수' 스팬 추가 -->
                     <span th:if="${#lists.contains(requiredSubjects, examSubjectList[j].id)}"
-                          style="display: inline-block; border-radius: 5px; height: 25px; background-color: #ff0f00; padding-left: 3px; padding-right: 3px; color: #ffffff;">
+                          style="display: inline-block; border-radius: 5px; height: 25px; background-color: #ff0f00; color: #ffffff; float: right;">
                         필수
                     </span>
                     <span th:if="${#lists.contains(electiveSubjects, examSubjectList[j].id)}"
-                          style="display: inline-block; border-radius: 5px; height: 25px; background-color: #faac02; padding-left: 3px; padding-right: 3px; color: #ffffff;">
+                          style="display: inline-block; border-radius: 5px; height: 25px; background-color: #faac02; color: #ffffff; float: right;">
                           선택
                     </span>
                 </td>
@@ -66,60 +64,8 @@
     </div>
 
 
-<!--
-    <div class="mt-1 subject-area">
-        <table class="table table-bordered">
-            <tbody>
-            <tr>
-                <td class="selected-required">건강·체력 평가
-                    <span style="display: inline-block; border-radius: 5px; height: 25px; background-color: #ff0f00; padding-left: 3px; padding-right: 3px; color: #ffffff;">필수</span>
-                </td>
-                <td>건강교육론</td>
-                <td class="selected-optional">
-                    기능해부학
-                    <span style="display: inline-block; border-radius: 5px; height: 25px; background-color: #faac02; padding-left: 3px; padding-right: 3px; color: #ffffff;">선택</span>
-                </td>
-                <td>노인체육론</td>
-            </tr>
-            <tr>
-                <td>병태생리학</td>
-                <td>스포츠교육학</td>
-                <td>스포츠사회학</td>
-                <td>스포츠심리학</td>
-            </tr>
-            <tr>
-                <td>스포츠영양학</td>
-                <td>스포츠윤리</td>
-                <td>운동부하검사</td>
-                <td>운동상해</td>
-            </tr>
-            <tr>
-                <td>운동생리학</td>
-                <td>운동역학</td>
-                <td>운동처방론</td>
-                <td>유아체육론</td>
-            </tr>
-            <tr>
-                <td>장애인스포츠론</td>
-                <td class="selected-required">체육측정평가론
-                    <span style="display: inline-block; border-radius: 5px; height: 25px; background-color: #ff0f00; padding-left: 3px; padding-right: 3px; color: #ffffff;">필수</span>
-                </td>
-                <td>트레이닝론</td>
-                <td>특수체육론</td>
-            </tr>
-            <tr>
-                <td>한국체육사</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
--->
-
     <div class="subject-title">
-        <h3>건강운동관리사의 응시 과목 입니다.</h3>
+        <h3>[[${exam.examTitle}]]의 응시 과목 입니다.</h3>
     </div>
 
 
