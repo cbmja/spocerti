@@ -20,7 +20,8 @@ spring:
 
 mybatis:
   mapper-locations: mapper/*.xml
-  type-aliases-package: com.spo.certificate.test.dto
-
+  type-aliases-package: com.spo.certificate.exam.dto
+  configuration:
+    map-underscore-to-camel-case: true
 storage:
   receivingPath: D:\spocert\DATA\

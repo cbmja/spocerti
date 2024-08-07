@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class TestCon {
 
     @GetMapping("/test")
-    public String test(){
+    public String index(){
 
         return "view/main/main";
     }
@@ -16,5 +16,11 @@ public class TestCon {
     public String list(){
 
         return "view/test/test-list";
+    }
+
+    @GetMapping("/test/test")
+    public String test(){
+
+        return "view/test/test";
     }
 }

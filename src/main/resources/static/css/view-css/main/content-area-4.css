@@ -54,7 +54,7 @@
 }
 .area-4-table{
     width: 100%;
-    height: 500px;
+    height: 350px;
     overflow: auto;
 }
 .table-title{
@@ -72,10 +72,15 @@
 }
 .test-btn{
     border: 1px solid #297bff;
+    width: 60px;
 }
 .test-btn:hover{
     background-color: #297bff;
     color: #ffffff;
 }
-
+.subject-title{
+    width: 100%;
+    height: 70px;
+    color: #698287;
+}
 

@@ -3,7 +3,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout/layout}">
 <head>
-    <title>Test Page</title>
+    <title>main</title>
 </head>
 <body>
 
@@ -14,17 +14,19 @@
         <!-- 컨텐츠2 -->
         <th:block th:replace="~{view/main/content-area-2 :: content-area-2}"></th:block>
 
+    <div class="content-area-4-5">
+        <!-- 컨텐츠4 -->
+        <th:block th:replace="~{view/main/content-area-4 :: content-area-4}"></th:block>
+
+        <!-- 컨텐츠5 -->
+        <th:block th:replace="~{view/main/content-area-5 :: content-area-5}"></th:block>
+    </div>
+
         <!-- 컨텐츠3 -->
         <th:block th:replace="~{view/main/content-area-3 :: content-area-3}"></th:block>
 
 
-        <div class="content-area-4-5">
-            <!-- 컨텐츠4 -->
-            <th:block th:replace="~{view/main/content-area-4 :: content-area-4}"></th:block>
 
-            <!-- 컨텐츠5 -->
-            <th:block th:replace="~{view/main/content-area-5 :: content-area-5}"></th:block>
-        </div>
 </div>
 </body>
 </html>
