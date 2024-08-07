@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,10 +23,10 @@ public class MainPageController {
     private final ExamTitleService examTitleService;
 
     @GetMapping("/main")
-    public String mainPage(Model model){
+    public String mainPage(Model model , @RequestParam(value = "examId",defaultValue = "1")int id){
 
         List<ExamSubject> examSubjectList = examSubjectService.findAll();
-        ExamTitle examTitle = examTitleService.findById(6);
+        ExamTitle examTitle = examTitleService.findById(id);
         String electiveSubject = examTitle.getElectiveSubject();
         String requiredSubject = examTitle.getRequiredSubject();
 
