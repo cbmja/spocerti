@@ -4,6 +4,7 @@ import com.spo.certificate.exam.dto.Exam;
 import com.spo.certificate.exam.dto.Subject;
 import com.spo.certificate.exam.service.exam.ExamInfoService;
 import com.spo.certificate.exam.service.subject.SubjectInfoService;
+import com.spo.certificate.main.selectOption.SelectOption;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +21,7 @@ public class MainPageController {
 
     private final SubjectInfoService subjectInfoService;
     private final ExamInfoService examInfoService;
-
+    private final SelectOption selectOption;
 
     @GetMapping("/main/subject")
     @ResponseBody
@@ -43,8 +44,12 @@ public class MainPageController {
     }
 
     @GetMapping("/main")
-    public String mainPage(){
+    public String mainPage(Model model){
 
+
+        model.addAttribute("examOptions",selectOption.examOptions());
+        model.addAttribute("typeOptions",selectOption.typeOptions());
+        model.addAttribute("yearOptions",selectOption.yearOptions());
 
         return "view/main/main";
     }

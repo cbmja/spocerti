@@ -4,15 +4,7 @@
     <div class="main-subject-form">
         <select id="examSelect">
             <option value="0" disabled selected>시험명</option>
-            <option value="1">1급_전문스포츠지도사</option>
-            <option value="2">2급_전문스포츠지도사</option>
-            <option value="3">1급_생활스포츠지도사</option>
-            <option value="4">2급_생활스포츠지도사</option>
-            <option value="5">건강운동관리사</option>
-            <option value="6">유소년스포츠지도사</option>
-            <option value="7">노인스포츠지도사</option>
-            <option value="8">1급_장애인스포츠지도사</option>
-            <option value="9">2급_장애인스포츠지도사</option>
+            <option th:each="exam : ${examOptions}" th:value="${exam.id}" th:text="${exam.examTitle}"></option>
         </select>
         <button id="main-subject-search-btn">검색</button>
     </div>

@@ -2,25 +2,17 @@
 <section th:fragment="main-exam-list" class="main-exam-ar">
 
         <form class="main-exam-form">
-            <select>
+            <select name="type">
                 <option value="1" disabled selected>A/B</option>
-                <option value="2">A</option>
-                <option value="3">B</option>
+                <option th:each="type : ${typeOptions}" th:value="${type}" th:text="${type}"></option>
             </select>
-            <select>
+            <select name="year">
                 <option value="1" disabled selected>년도</option>
-                <option value="2">2015</option>
-                <option value="3">2016</option>
-                <option value="3">2017</option>
-                <option value="3">2018</option>
+                <option th:each="year : ${yearOptions}" th:value="${year}" th:text="${year}"></option>
             </select>
-            <select>
+            <select name="examId">
                 <option value="1" disabled selected>시험명</option>
-                <option value="2">건강운동관리사</option>
-                <option value="3">1급 전문스포츠지도사</option>
-                <option value="3">2급 전문스포츠지도사</option>
-                <option value="3">1급 생활스포츠지도사</option>
-                <option value="3">2급 생활스포츠지도사</option>
+                <option th:each="exam : ${examOptions}" th:value="${exam.id}" th:text="${exam.examTitle}"></option>
             </select>
             <button type="submit">찾기</button>
         </form>
