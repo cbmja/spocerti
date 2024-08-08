@@ -1,6 +1,9 @@
 window.onload=function(){
     examId = "1";
 
+    var selectElement = document.getElementById('examSelect');
+    selectElement.value = examId;
+
     if(examId === "0") {
         alert("시험을 선택하세요.");
         return;
