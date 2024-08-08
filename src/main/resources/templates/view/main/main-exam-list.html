@@ -2,7 +2,7 @@
 <section th:fragment="main-exam-list" class="main-exam-ar">
 
         <form class="main-exam-form">
-            <select name="type">
+            <select name="type" id="examSelect-2">
                 <option value="1" disabled selected>A/B</option>
                 <option th:each="type : ${typeOptions}" th:value="${type}" th:text="${type}"></option>
             </select>
