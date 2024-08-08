@@ -66,10 +66,16 @@
     border-collapse: collapse;
 }
 
-.main-subject-table th{
+.main-subject-table td{
     border: 1px solid #000;
     text-align: center; /* 수평 중앙 정렬 */
     vertical-align: middle; /* 수직 중앙 정렬 */
+}
+.required-subject{
+    background-color: #ffd4d1;
+}
+.elective-subject{
+    background-color: #fff1d1;
 }
 /*오른쪽 영역*//*오른쪽 영역*//*오른쪽 영역*//*오른쪽 영역*//*오른쪽 영역*//*오른쪽 영역*//*오른쪽 영역*//*오른쪽 영역*//*오른쪽 영역*/
 /*상단*//*상단*//*상단*//*상단*//*상단*//*상단*//*상단*//*상단*//*상단*//*상단*/

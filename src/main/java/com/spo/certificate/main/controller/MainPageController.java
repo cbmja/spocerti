@@ -2,8 +2,8 @@ package com.spo.certificate.main.controller;
 
 import com.spo.certificate.exam.dto.Exam;
 import com.spo.certificate.exam.dto.Subject;
-import com.spo.certificate.exam.service.examSubject.SubjectService;
-import com.spo.certificate.exam.service.examTitle.ExamService;
+import com.spo.certificate.exam.service.subject.SubjectService;
+import com.spo.certificate.exam.service.exam.ExamService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

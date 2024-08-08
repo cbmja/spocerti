@@ -1,4 +1,4 @@
-package com.spo.certificate.exam.service.examSubject;
+package com.spo.certificate.exam.service.subject;
 
 import com.spo.certificate.exam.dto.Subject;
 import lombok.RequiredArgsConstructor;

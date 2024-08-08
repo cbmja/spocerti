@@ -1,7 +1,7 @@
 package com.spo.certificate;
 
-import com.spo.certificate.exam.service.examSubject.SubjectService;
-import com.spo.certificate.exam.service.examTitle.ExamService;
+import com.spo.certificate.exam.service.subject.SubjectService;
+import com.spo.certificate.exam.service.exam.ExamService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
