@@ -20,7 +20,13 @@ window.onload=function(){
     xhr.send();
 }
 document.getElementById('examSelect2').addEventListener('change',function(){
-        console.log('change');
+
+        var examId = document.getElementById('examSelect2').value;
+
+        var selectElement = document.getElementById('examSelect');
+            selectElement.value = examId;
+
+        document.getElementById('main-subject-search-btn').click();
 });
 
 document.getElementById('main-subject-search-btn').addEventListener('click', function() {
