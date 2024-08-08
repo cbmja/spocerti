@@ -19,11 +19,13 @@ window.onload=function(){
     };
     xhr.send();
 }
-
+document.getElementById('examSelect2').addEventListener('change',function(){
+        console.log('change');
+});
 
 document.getElementById('main-subject-search-btn').addEventListener('click', function() {
     var examId = document.getElementById('examSelect').value;
-
+    console.log(examId);
     if(examId === "0") {
         alert("시험명을 선택하세요.");
         return;
