@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class SubjectService {
+public class SubjectInfoService {
 
     private final SqlSessionTemplate sql;
 

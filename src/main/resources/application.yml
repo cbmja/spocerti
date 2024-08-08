@@ -23,5 +23,6 @@ mybatis:
   type-aliases-package: com.spo.certificate.exam.dto
   configuration:
     map-underscore-to-camel-case: true
+
 storage:
   receivingPath: D:\spocert\DATA\

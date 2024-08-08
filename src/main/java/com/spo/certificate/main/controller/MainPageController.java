@@ -2,8 +2,8 @@ package com.spo.certificate.main.controller;
 
 import com.spo.certificate.exam.dto.Exam;
 import com.spo.certificate.exam.dto.Subject;
-import com.spo.certificate.exam.service.subject.SubjectService;
-import com.spo.certificate.exam.service.exam.ExamService;
+import com.spo.certificate.exam.service.exam.ExamInfoService;
+import com.spo.certificate.exam.service.subject.SubjectInfoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,15 +18,15 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class MainPageController {
 
-    private final SubjectService subjectService;
-    private final ExamService examService;
+    private final SubjectInfoService subjectInfoService;
+    private final ExamInfoService examInfoService;
 
 
     @GetMapping("/main")
     @ResponseBody
     public Map<String, Object> subject(@RequestParam(value = "examId", defaultValue = "1") int id) {
-        List<Subject> examSubjectList = subjectService.findAll();
-        Exam exam = examService.findById(id);
+        List<Subject> examSubjectList = subjectInfoService.findAll();
+        Exam exam = examInfoService.findById(id);
         String electiveSubject = exam.getElectiveSubject();
         String requiredSubject = exam.getRequiredSubject();
 
@@ -45,8 +45,8 @@ public class MainPageController {
     @GetMapping("/main/main")
     public String mainPage(Model model , @RequestParam(value = "examId",defaultValue = "1")int id){
 
-        List<Subject> examSubjectList = subjectService.findAll();
-        Exam examTitle = examService.findById(id);
+        List<Subject> examSubjectList = subjectInfoService.findAll();
+        Exam examTitle = examInfoService.findById(id);
         String electiveSubject = examTitle.getElectiveSubject();
         String requiredSubject = examTitle.getRequiredSubject();
 

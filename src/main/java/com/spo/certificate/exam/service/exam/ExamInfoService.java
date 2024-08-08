@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ExamService {
+public class ExamInfoService {
     private final SqlSessionTemplate sql;
     public Exam findById(int id){
 

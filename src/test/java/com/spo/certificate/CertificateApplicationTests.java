@@ -1,7 +1,7 @@
 package com.spo.certificate;
 
-import com.spo.certificate.exam.service.subject.SubjectService;
-import com.spo.certificate.exam.service.exam.ExamService;
+import com.spo.certificate.exam.dto.ExamData;
+import com.spo.certificate.exam.service.examData.ExamDataSaveService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,19 +10,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 class CertificateApplicationTests {
 
 	@Autowired
-	private SubjectService subjectService;
-
-	@Autowired
-	private ExamService examService;
-
+	private ExamDataSaveService examDataSaveService;
 
 	@Test
 	void contextLoads() {
+		for(int i= 2015; i<=2024; i++){
+			ExamData examData = new ExamData();
 
 
+		}
 
-		System.out.println(subjectService.findById(1));
-		System.out.println(examService.findById(1));
 
 	}
 
