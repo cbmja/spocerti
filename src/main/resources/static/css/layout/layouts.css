@@ -1,0 +1,87 @@
+/*헤더*//*헤더*//*헤더*//*헤더*//*헤더*//*헤더*//*헤더*//*헤더*//*헤더*//*헤더*/
+
+.header-ar {
+    width: 100%;
+    height: 40px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #d5dbd5; /* 하단 경계선 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 수직 중앙 정렬 */
+}
+.header-l , .header-r{
+    display: flex;
+    align-items: center;
+}
+.header-l a , .header-r a {
+    margin: 0 5px;
+    color: #7a7d78;
+}
+.header-text:hover{
+    color: #00a12b;
+    cursor: pointer;
+}
+.header-bar:hover{
+    cursor: default;
+}
+
+/*헤더*//*헤더*//*헤더*//*헤더*//*헤더*//*헤더*//*헤더*//*헤더*//*헤더*//*헤더*/
+
+
+/*네비메뉴*//*네비메뉴*//*네비메뉴*//*네비메뉴*//*네비메뉴*//*네비메뉴*//*네비메뉴*/
+
+.navbar-ar{
+    background-color: rgba(253, 255, 252, 1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 65px;
+
+    border-bottom: 1px solid #d5dbd5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.navbar-c {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+.navbar-l{
+    margin-right: 20px;
+}
+.navbar-l , .navbar-r{
+    display: flex;
+    align-items: center;
+}
+.navbar-c .navbar-bar{
+    margin: 0 5px;
+    color: #7a7d78;
+}
+.navbar-text{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.navbar-text:hover{
+    color: #004512;
+    cursor: pointer;
+    font-weight: bold;
+}
+.navbar-bar:hover{
+    cursor: default;
+}
+
+/*네비메뉴*//*네비메뉴*//*네비메뉴*//*네비메뉴*//*네비메뉴*//*네비메뉴*//*네비메뉴*/
+
+
+/*푸터*//*푸터*//*푸터*//*푸터*//*푸터*//*푸터*//*푸터*//*푸터*//*푸터*//*푸터*/
+
+.footer-ar{
+    height: 180px;
+    width: 100%;
+    background-color: black;
+}
+
+/*푸터*//*푸터*//*푸터*//*푸터*//*푸터*//*푸터*//*푸터*//*푸터*//*푸터*//*푸터*/
