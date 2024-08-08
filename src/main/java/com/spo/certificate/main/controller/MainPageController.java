@@ -22,7 +22,7 @@ public class MainPageController {
     private final ExamInfoService examInfoService;
 
 
-    @GetMapping("/main")
+    @GetMapping("/main/subject")
     @ResponseBody
     public Map<String, Object> subject(@RequestParam(value = "examId", defaultValue = "1") int id) {
         List<Subject> examSubjectList = subjectInfoService.findAll();
@@ -42,7 +42,7 @@ public class MainPageController {
         return response;
     }
 
-    @GetMapping("/main/main")
+    @GetMapping("/main")
     public String mainPage(Model model , @RequestParam(value = "examId",defaultValue = "1")int id){
 
         List<Subject> examSubjectList = subjectInfoService.findAll();
@@ -60,7 +60,6 @@ public class MainPageController {
         model.addAttribute("electiveSubjects",electiveSubjects); //선택과목
         model.addAttribute("requiredSubjects",requiredSubjects); //필수과목
         model.addAttribute("examSubjectList" ,examSubjectList); //모든 과목
-        subject(1);
 
 
         return "view/main/main";

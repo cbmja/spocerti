@@ -7,7 +7,7 @@ window.onload=function(){
     }
 
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/main?examId=" + examId, true);
+    xhr.open("GET", "/main/subject?examId=" + examId, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var response = JSON.parse(xhr.responseText);
@@ -18,7 +18,7 @@ window.onload=function(){
 }
 
 
-document.getElementById('searchButton').addEventListener('click', function() {
+document.getElementById('main-subject-search-btn').addEventListener('click', function() {
     var examId = document.getElementById('examSelect').value;
 
     if(examId === "0") {
@@ -27,7 +27,7 @@ document.getElementById('searchButton').addEventListener('click', function() {
     }
 
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/main?examId=" + examId, true);
+    xhr.open("GET", "/main/subject?examId=" + examId, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var response = JSON.parse(xhr.responseText);
