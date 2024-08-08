@@ -13,12 +13,16 @@
 
 
     <!--select-->
-    <select id="findById"  parameterType="int" resultType="Subject">
-        SELECT * FROM subject WHERE id = #{id}
+    <select id="findById"  parameterType="int" resultType="ExamData">
+        SELECT * FROM exam_data WHERE id = #{id}
     </select>
 
-    <select id="findAll" resultType="Subject">
-        SELECT * FROM subject
+    <select id="findAll" resultType="ExamData">
+        SELECT * FROM exam_data
+    </select>
+
+    <select id="findByYearAndExamId" parameterType="MainSearch" resultType="ExamData">
+        SELECT * FROM exam_data where year = #{year} AND exam_id = #{examId} ORDER BY year asc
     </select>
     <!--select-->
 
