@@ -26,19 +26,19 @@ public class MainPageController {
     @ResponseBody
     public Map<String, Object> subject(@RequestParam(value = "examId", defaultValue = "1") int id) {
         List<Subject> examSubjectList = subjectService.findAll();
-        Exam examTitle = examService.findById(id);
-        String electiveSubject = examTitle.getElectiveSubject();
-        String requiredSubject = examTitle.getRequiredSubject();
+        Exam exam = examService.findById(id);
+        String electiveSubject = exam.getElectiveSubject();
+        String requiredSubject = exam.getRequiredSubject();
 
         List<Integer> electiveSubjects = electiveSubject == null ? new ArrayList<>() : Arrays.stream(electiveSubject.split("_")).map(Integer::parseInt).collect(Collectors.toList());
         List<Integer> requiredSubjects = requiredSubject == null ? new ArrayList<>() : Arrays.stream(requiredSubject.split("_")).map(Integer::parseInt).collect(Collectors.toList());
 
         Map<String, Object> response = new HashMap<>();
-        response.put("examTitle", examTitle.getExamTitle());
+        response.put("examTitle", exam.getExamTitle());
         response.put("electiveSubjects", electiveSubjects);
         response.put("requiredSubjects", requiredSubjects);
         response.put("examSubjectList", examSubjectList);
-
+        response.put("electiveCnt", exam.getElectiveCnt());
         return response;
     }
 

@@ -9,5 +9,6 @@ public class Exam {
     private String examTitle;
     private String requiredSubject;
     private String electiveSubject;
+    private int electiveCnt;
 
 }

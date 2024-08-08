@@ -47,12 +47,12 @@ function updatePage(data) {
     // 필수 과목 및 선택 과목 수 업데이트
     var requiredSubjectCountElement = document.getElementById('requiredSubjectCount');
     if (requiredSubjectCountElement) {
-        requiredSubjectCountElement.innerText = data.requiredSubjects.length + "과목";
+        requiredSubjectCountElement.innerText = data.requiredSubjects.length + " 과목";
     }
 
     var electiveSubjectCountElement = document.getElementById('electiveSubjectCount');
     if (electiveSubjectCountElement) {
-        electiveSubjectCountElement.innerText = data.electiveSubjects.length + "과목";
+        electiveSubjectCountElement.innerText =data.electiveCnt + " 과목("+data.electiveSubjects.length+"중 택"+data.electiveCnt+")";
     }
 
     // 과목 테이블 업데이트
