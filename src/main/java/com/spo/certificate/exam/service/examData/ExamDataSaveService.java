@@ -11,8 +11,8 @@ public class ExamDataSaveService {
     private final SqlSessionTemplate sql;
 
 
-    public int createExamData(ExamData examData){
-        return sql.insert("com.spo.certificate.exam.mapper.ExamDataMapper.createExamData",examData);
+    public int save(ExamData examData){
+        return sql.insert("com.spo.certificate.exam.mapper.ExamDataMapper.save",examData);
     }
 
 }

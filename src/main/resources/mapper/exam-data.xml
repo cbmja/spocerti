@@ -5,7 +5,7 @@
 <mapper namespace="com.spo.certificate.exam.mapper.ExamDataMapper">
 
     <!--insert-->
-    <insert id="createExamData" parameterType="ExamData">
+    <insert id="save" parameterType="ExamData">
         INSERT INTO exam_data (year , type , exam_id , path , exam_title , file_name)
         VALUES(#{year} , #{type} , #{examId} , #{path} , #{examTitle} , #{fileName})
     </insert>

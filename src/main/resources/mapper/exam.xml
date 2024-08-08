@@ -8,6 +8,9 @@
     <select id="findById"  parameterType="int" resultType="Exam">
         SELECT * FROM exam WHERE id = #{id}
     </select>
+    <select id="findById"  parameterType="int" resultType="Exam">
+        SELECT * FROM exam WHERE id = #{id}
+    </select>
 <!--select-->
 
 </mapper>
