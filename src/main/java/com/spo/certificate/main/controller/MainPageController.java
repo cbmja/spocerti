@@ -43,23 +43,7 @@ public class MainPageController {
     }
 
     @GetMapping("/main")
-    public String mainPage(Model model , @RequestParam(value = "examId",defaultValue = "1")int id){
-
-        List<Subject> examSubjectList = subjectInfoService.findAll();
-        Exam examTitle = examInfoService.findById(id);
-        String electiveSubject = examTitle.getElectiveSubject();
-        String requiredSubject = examTitle.getRequiredSubject();
-
-        List<Integer> electiveSubjects = electiveSubject == null ? new ArrayList<>() : Arrays.stream(electiveSubject.split("_")).map(Integer::parseInt).collect(Collectors.toList());
-        List<Integer> requiredSubjects = requiredSubject == null ? new ArrayList<>() : Arrays.stream(requiredSubject.split("_")).map(Integer::parseInt).collect(Collectors.toList());
-
-        System.out.println(electiveSubjects);
-        System.out.println(requiredSubjects);
-
-        model.addAttribute("exam" ,examTitle);
-        model.addAttribute("electiveSubjects",electiveSubjects); //선택과목
-        model.addAttribute("requiredSubjects",requiredSubjects); //필수과목
-        model.addAttribute("examSubjectList" ,examSubjectList); //모든 과목
+    public String mainPage(){
 
 
         return "view/main/main";
