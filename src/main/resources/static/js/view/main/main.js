@@ -70,10 +70,10 @@ function updatePage(data) {
                 // 필수 과목 또는 선택 과목에 따른 span 및 class 추가
                 if (data.requiredSubjects.includes(data.examSubjectList[j].id)) {
                     className = 'required-subject';
-                    spanContent = '<span style="display: inline-block; border-radius: 5px; height: 25px; background-color: #ff0f00; color: #ffffff; float: right;">필수</span>';
+                    spanContent = '<span class="required-box">필수</span>';
                 } else if (data.electiveSubjects.includes(data.examSubjectList[j].id)) {
                     className = 'elective-subject';
-                    spanContent = '<span style="display: inline-block; border-radius: 5px; height: 25px; background-color: #faac02; color: #ffffff; float: right;">선택</span>';
+                    spanContent = '<span class="elective-box">선택</span>';
                 }
 
                 tableContent += `<td class="${className}">${cellContent}${spanContent}</td>`;

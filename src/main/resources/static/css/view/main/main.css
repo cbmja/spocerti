@@ -74,8 +74,13 @@
 
 .main-subject-table td{
     border: 1px solid #000;
-    text-align: center; /* 수평 중앙 정렬 */
-    vertical-align: middle; /* 수직 중앙 정렬 */
+    text-align: left;
+    vertical-align: middle;
+    font-size: 15px;
+    width: 25%;
+    height: 16%;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 .required-subject{
     background-color: #ffd4d1;
@@ -83,6 +88,23 @@
 .elective-subject{
     background-color: #fff1d1;
 }
+.required-box{
+   display: inline-block;
+   border-radius: 5px;
+   height: 25px;
+   background-color: #ff0f00;
+   color: #ffffff;
+   float: right;
+}
+.elective-box{
+    display: inline-block;
+    border-radius: 5px;
+    height: 25px;
+    background-color: #faac02;
+    color: #ffffff;
+    float: right;
+}
+
 /*오른쪽 영역*//*오른쪽 영역*//*오른쪽 영역*//*오른쪽 영역*//*오른쪽 영역*//*오른쪽 영역*//*오른쪽 영역*//*오른쪽 영역*//*오른쪽 영역*/
 /*상단*//*상단*//*상단*//*상단*//*상단*//*상단*//*상단*//*상단*//*상단*//*상단*/
 
