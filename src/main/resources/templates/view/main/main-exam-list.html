@@ -1,13 +1,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <section th:fragment="main-exam-list" class="main-exam-ar">
 
-        <form class="main-exam-form">
-            <!--
-            <select name="type" th:field="${search.type}">
-                <option value="1" disabled selected>A/B</option>
-                <option th:each="type : ${typeOptions}" th:value="${type}" th:text="${type}"></option>
-            </select>
-            -->
+    <div class="main-exam-form-box">
+        <form class="main-exam-form-1">
+            <input type="hidden" name="type" value="CONDITIONAL">
             <select name="year" th:field="${search.year}">
                 <option value="1" disabled selected>년도</option>
                 <option th:each="year : ${yearOptions}" th:value="${year}" th:text="${year}"></option>
@@ -19,6 +15,18 @@
             </select>
             <button type="submit">찾기</button>
         </form>
+
+        <form class="main-exam-form-2">
+
+            <input type="hidden" name="type" value="ALL">
+            <select id="examSelect3" name="examId" th:field="${search.examId}">
+                <option value="1" disabled selected>시험명</option>
+                <option th:each="exam : ${examOptions}" th:value="${exam.id}" th:text="${exam.examTitle}"></option>
+            </select>
+            <button type="submit">찾기</button>
+        </form>
+    </div>
+
 
         <div class="main-exam-list">
         <table>

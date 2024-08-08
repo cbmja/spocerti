@@ -24,6 +24,10 @@
     <select id="findByYearAndExamId" parameterType="MainSearch" resultType="ExamData">
         SELECT * FROM exam_data where year = #{year} AND exam_id = #{examId} ORDER BY year asc
     </select>
+
+    <select id="findByExamId" parameterType="MainSearch" resultType="ExamData">
+        SELECT * FROM exam_data where exam_id = #{examId} ORDER BY year asc
+    </select>
     <!--select-->
 
 </mapper>

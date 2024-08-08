@@ -1,5 +1,6 @@
 window.onload=function(){
-    examId = "1";
+    var examId = document.getElementById('examSelect2').value;
+
 
     var selectElement = document.getElementById('examSelect');
     selectElement.value = examId;
@@ -22,6 +23,16 @@ window.onload=function(){
 document.getElementById('examSelect2').addEventListener('change',function(){
 
         var examId = document.getElementById('examSelect2').value;
+
+        var selectElement = document.getElementById('examSelect');
+            selectElement.value = examId;
+
+        document.getElementById('main-subject-search-btn').click();
+});
+
+document.getElementById('examSelect3').addEventListener('change',function(){
+
+        var examId = document.getElementById('examSelect3').value;
 
         var selectElement = document.getElementById('examSelect');
             selectElement.value = examId;

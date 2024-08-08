@@ -12,4 +12,8 @@ public interface ExamDataMapper {
 
     List<ExamData> findByYearAndExamId(MainSearch form);
 
+    List<ExamData> findByExamId(MainSearch form);
+
+
+
 }

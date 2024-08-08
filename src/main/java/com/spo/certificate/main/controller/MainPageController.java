@@ -49,7 +49,12 @@ public class MainPageController {
     @GetMapping("/main")
     public String mainPage(Model model , @ModelAttribute MainSearch form){
 
-        model.addAttribute("examDataList",examDataInfoService.findByYearAndExamId(form));
+
+        if(form.getType().equals("ALL")){
+            model.addAttribute("examDataList",examDataInfoService.findByExamId(form));
+        }else {
+            model.addAttribute("examDataList",examDataInfoService.findByYearAndExamId(form));
+        }
         model.addAttribute("examOptions",selectOption.examOptions());
         model.addAttribute("typeOptions",selectOption.typeOptions());
         model.addAttribute("yearOptions",selectOption.yearOptions());

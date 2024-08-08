@@ -18,5 +18,8 @@ public class ExamDataInfoService {
 
         return sql.selectList("com.spo.certificate.exam.mapper.ExamDataMapper.findByYearAndExamId",form);
     }
+    public List<ExamData> findByExamId(MainSearch form){
 
+        return sql.selectList("com.spo.certificate.exam.mapper.ExamDataMapper.findByExamId",form);
+    }
 }

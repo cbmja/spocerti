@@ -6,7 +6,7 @@ import lombok.Data;
 public class MainSearch {
 
 
-    private String type="A";
+    private String type="ALL";
     private int year=2015;
     private int examId=1;
 }

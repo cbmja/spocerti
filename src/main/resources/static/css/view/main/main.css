@@ -27,8 +27,19 @@
     padding-right: 7.5px;
     min-width: 600px;
 }
-.main-exam-form{
+.main-exam-form-box{
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.main-exam-form-1{
+    width: 48%;
+    height: 55px;
+    border: 2px solid #000; /* 검은색 실선 테두리 */
+    border-radius: 5px;
+}
+.main-exam-form-2{
+    width: 48%;
     height: 55px;
     border: 2px solid #000; /* 검은색 실선 테두리 */
     border-radius: 5px;
@@ -43,6 +54,9 @@
     border: 1px solid #000;
     text-align: center; /* 수평 중앙 정렬 */
     vertical-align: middle; /* 수직 중앙 정렬 */
+}
+.main-exam-list tr:hover{
+    background-color: #a2bdad;
 }
 .main-exam-filename{
     text-align: left !important;
