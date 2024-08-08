@@ -20,29 +20,6 @@ window.onload=function(){
     xhr.send();
 }
 
-document.getElementById('examSelect-2').addEventListener('change', function() {
-    var examId = document.getElementById('examSelect-2').value;
-    console.log(examId);
-    var selectElement = document.getElementById('examSelect');
-    selectElement.value = examId;
-
-    if(examId === "0") {
-        alert("시험명을 선택하세요.");
-        return;
-    }
-
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/main/subject?examId=" + examId, true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            var response = JSON.parse(xhr.responseText);
-            updatePage(response);
-        }
-    };
-    xhr.send();
-
-});
-
 
 document.getElementById('main-subject-search-btn').addEventListener('click', function() {
     var examId = document.getElementById('examSelect').value;
