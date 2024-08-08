@@ -6,8 +6,8 @@
 
     <!--insert-->
     <insert id="createExamData" parameterType="ExamData">
-        INSERT INTO exam_data (id , year , type , exam_id , path , exam_title , file_name)
-        VALUES(#{id} , #{year} , #{type} , #{examId} , #{path} , #{examTitle} , #{fileName})
+        INSERT INTO exam_data (year , type , exam_id , path , exam_title , file_name)
+        VALUES(#{year} , #{type} , #{examId} , #{path} , #{examTitle} , #{fileName})
     </insert>
     <!--insert-->
 

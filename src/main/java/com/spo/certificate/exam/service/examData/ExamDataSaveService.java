@@ -12,7 +12,7 @@ public class ExamDataSaveService {
 
 
     public int createExamData(ExamData examData){
-        return sql.insert("com.spo.certificate.exam.mapper.ExamDatatMapper.createExamData",examData);
+        return sql.insert("com.spo.certificate.exam.mapper.ExamDataMapper.createExamData",examData);
     }
 
 }
