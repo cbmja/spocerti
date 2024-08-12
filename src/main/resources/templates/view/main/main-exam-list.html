@@ -10,7 +10,7 @@
                 <option th:each="year : ${yearOptions}" th:value="${year}" th:text="${year}"></option>
             </select>
 
-            <select id="examSelect2" name="examId" th:field="${search.examId}">
+            <select id="examSelect1" name="examId" th:field="${search.examId}">
                 <option value="1" disabled selected>시험명</option>
                 <option th:each="exam : ${examOptions}" th:value="${exam.id}" th:text="${exam.examTitle}"></option>
             </select>
@@ -18,9 +18,8 @@
         </form>
 
         <form class="main-exam-form-2">
-
             <input type="hidden" name="type" value="ALL">
-            <select id="examSelect3" name="examId" th:field="${search.examId}">
+            <select id="examSelect2" name="examId" th:field="${search.examId}">
                 <option value="1" disabled selected>시험명</option>
                 <option th:each="exam : ${examOptions}" th:value="${exam.id}" th:text="${exam.examTitle}"></option>
             </select>

@@ -2,7 +2,7 @@
 <section th:fragment="main-subject-table" class="main-subject-ar">
 
     <div class="main-subject-form">
-        <select id="examSelect1">
+        <select id="subjectSelect1">
             <option value="0" disabled selected>시험명</option>
             <option th:each="exam : ${examOptions}" th:value="${exam.id}" th:text="${exam.examTitle}"></option>
         </select>

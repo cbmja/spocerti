@@ -1,68 +1,68 @@
 
 /* 처음 기본값 (mainSearch examId 기본값 1 - 1급_전문스포츠지도사)*/
 window.onload=function(){
-    var examId = document.getElementById('examSelect2').value;
+    var examSelect1 = document.getElementById('examSelect1').value;
 
-    var selectElement = document.getElementById('examSelect1');
-    selectElement.value = examId;
+    var subjectSelect1 = document.getElementById('subjectSelect1');
+    subjectSelect1.value = examSelect1;
 
-    if(examId === "0") {
+    if(subjectSelect1 === "0") {
         alert("시험을 선택하세요.");
         return;
     }
 
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/main/subject?examId=" + examId, true);
+    xhr.open("GET", "/main/subject?examId=" + examSelect1, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var response = JSON.parse(xhr.responseText);
-            updatePage(response);
+            updateSubjectTable(response);
         }
     };
     xhr.send();
 }
 
 
-document.getElementById('examSelect2').addEventListener('change',function(){
+document.getElementById('examSelect1').addEventListener('change',function(){
 
-        var examId = document.getElementById('examSelect2').value;
+        var examSelect1 = document.getElementById('examSelect1').value;
 
-        var selectElement = document.getElementById('examSelect');
-            selectElement.value = examId;
+        var selectElement = document.getElementById('subjectSelect1');
+            selectElement.value = examSelect1;
 
         document.getElementById('main-subject-search-btn').click();
 });
 
-document.getElementById('examSelect3').addEventListener('change',function(){
+document.getElementById('examSelect2').addEventListener('change',function(){
 
-        var examId = document.getElementById('examSelect3').value;
+        var examSelect2 = document.getElementById('examSelect2').value;
 
-        var selectElement = document.getElementById('examSelect1');
-            selectElement.value = examId;
+        var subjectSelect1 = document.getElementById('subjectSelect1');
+            subjectSelect1.value = examSelect2;
 
         document.getElementById('main-subject-search-btn').click();
 });
 
 document.getElementById('main-subject-search-btn').addEventListener('click', function() {
-    var examId = document.getElementById('examSelect1').value;
-    console.log(examId);
-    if(examId === "0") {
+    var subjectSelect1 = document.getElementById('subjectSelect1').value;
+    console.log(subjectSelect1);
+    if(subjectSelect1 === "0") {
         alert("시험명을 선택하세요.");
         return;
     }
 
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/main/subject?examId=" + examId, true);
+    xhr.open("GET", "/main/subject?examId=" + subjectSelect1, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var response = JSON.parse(xhr.responseText);
-            updatePage(response);
+            updateSubjectTable(response);
         }
     };
     xhr.send();
 
 });
-function updatePage(data) {
+function updateSubjectTable(data) {
     // 시험 제목 업데이트
     var examTitleElement = document.getElementById('examTitle');
     if (examTitleElement) {
@@ -109,6 +109,12 @@ function updatePage(data) {
         // 모든 내용을 한 번에 tableBody에 추가
         tableBody.innerHTML = tableContent;
     }
+}
+
+
+function updateExamList(data){
+
+
 }
 
 

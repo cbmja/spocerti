@@ -46,7 +46,7 @@ public class MainPageController {
         return response;
     }
 
-    @GetMapping("/main")
+    @GetMapping("/main/main")
     public String mainPage(Model model , @ModelAttribute MainSearch form){
 
 
