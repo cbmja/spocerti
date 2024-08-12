@@ -1,8 +1,9 @@
+
+/* 처음 기본값 (mainSearch examId 기본값 1 - 1급_전문스포츠지도사)*/
 window.onload=function(){
     var examId = document.getElementById('examSelect2').value;
 
-
-    var selectElement = document.getElementById('examSelect');
+    var selectElement = document.getElementById('examSelect1');
     selectElement.value = examId;
 
     if(examId === "0") {
@@ -20,6 +21,8 @@ window.onload=function(){
     };
     xhr.send();
 }
+
+
 document.getElementById('examSelect2').addEventListener('change',function(){
 
         var examId = document.getElementById('examSelect2').value;
@@ -34,14 +37,14 @@ document.getElementById('examSelect3').addEventListener('change',function(){
 
         var examId = document.getElementById('examSelect3').value;
 
-        var selectElement = document.getElementById('examSelect');
+        var selectElement = document.getElementById('examSelect1');
             selectElement.value = examId;
 
         document.getElementById('main-subject-search-btn').click();
 });
 
 document.getElementById('main-subject-search-btn').addEventListener('click', function() {
-    var examId = document.getElementById('examSelect').value;
+    var examId = document.getElementById('examSelect1').value;
     console.log(examId);
     if(examId === "0") {
         alert("시험명을 선택하세요.");
