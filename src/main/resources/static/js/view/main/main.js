@@ -2,6 +2,7 @@
 /* 처음 기본값 (mainSearch examId 기본값 1 - 1급_전문스포츠지도사)*/
 window.onload=function(){
     var examSelect1 = document.getElementById('examSelect1').value;
+    var examType2 = document.getElementById('examType2').value;
 
     var subjectSelect1 = document.getElementById('subjectSelect1');
     subjectSelect1.value = examSelect1;
@@ -11,15 +12,9 @@ window.onload=function(){
         return;
     }
 
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/main/subject?examId=" + examSelect1, true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            var response = JSON.parse(xhr.responseText);
-            updateSubjectTable(response);
-        }
-    };
-    xhr.send();
+    document.getElementById('main-subject-search-btn').click();
+
+    document.getElementById('main-exam-search-btn2').click();
 }
 
 
@@ -112,6 +107,7 @@ function updateSubjectTable(data) {
 }
 
 
+
 document.getElementById('main-exam-search-btn1').addEventListener('click', function() {
 
     var examType1 = document.getElementById('examType1').value;
@@ -165,26 +161,22 @@ document.getElementById('main-exam-search-btn2').addEventListener('click', funct
 
 
 function updateExamList(data) {
-    // 시험 제목 업데이트
-    var examTitleElement = document.getElementById('examTitle');
-    if (examTitleElement) {
-        examTitleElement.innerText = data.examTitle + "의 응시 과목 입니다.";
+var tableBody = document.getElementById('examListBody');
+    if (tableBody) {
+        let tableContent = ''; // 모든 테이블 내용을 문자열로 저장
+
+        for (var i = 0; i < data.examDataList.length; i++) {
+            tableContent += "<tr>"
+                            +"<td>"+data.examDataList[i].year+"</td>"
+                            +"<td class='main-exam-filename'>"+data.examDataList[i].fileName+"</td>"
+                            +"<td>"+data.examDataList[i].type+"</td>"
+                            +"<td> <button type='button'>모의시험</button> </td>"
+                            +"<td> <a href='#'>문제</a> / <a href='#'>정답</a> </td>"
+                            +"</tr>";
+
+        }
+        tableBody.innerHTML = tableContent;
     }
-
-    // 필수 과목 및 선택 과목 수 업데이트
-    var requiredSubjectCountElement = document.getElementById('requiredSubjectCount');
-    if (requiredSubjectCountElement) {
-        requiredSubjectCountElement.innerText = data.requiredSubjects.length + " 과목";
-    }
-
-    var electiveSubjectCountElement = document.getElementById('electiveSubjectCount');
-    if (electiveSubjectCountElement) {
-        electiveSubjectCountElement.innerText =data.electiveCnt + " 과목("+data.electiveSubjects.length+"중 택"+data.electiveCnt+")";
-    }
-
-    // 과목 테이블 업데이트
-    var tableBody = document.getElementById('subjectTableBody');
-
 }
 
 

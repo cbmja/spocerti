@@ -40,20 +40,8 @@
             <th scope="col">download</th>
         </tr>
         </thead>
-        <tbody>
-            <tr th:each="examData : ${examDataList}">
-                <td th:text="${examData.year}"></td>
-                <td th:text="${#strings.substring(examData.fileName, 0, examData.fileName.length()-4)}" class="main-exam-filename"></td>
-                <td th:text="${examData.type}"></td>
-                <td>
-                    <button type="button">모의시험</button>
-                </td>
-                <td>
-                    <a href="#">문제</a>
-                    /
-                    <a href="#">정답</a>
-                </td>
-            </tr>
+        <tbody id="examListBody">
+
         </tbody>
     </table>
     </div>
