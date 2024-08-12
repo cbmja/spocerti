@@ -1,6 +1,7 @@
 package com.spo.certificate.main.controller;
 
 import com.spo.certificate.exam.dto.Exam;
+import com.spo.certificate.exam.dto.ExamData;
 import com.spo.certificate.exam.dto.Subject;
 import com.spo.certificate.exam.service.exam.ExamInfoService;
 import com.spo.certificate.exam.service.examData.ExamDataInfoService;
@@ -43,6 +44,25 @@ public class MainPageController {
         response.put("requiredSubjects", requiredSubjects);
         response.put("examSubjectList", examSubjectList);
         response.put("electiveCnt", exam.getElectiveCnt());
+        return response;
+    }
+
+    @GetMapping("/main/exam")
+    @ResponseBody
+    public Map<String, Object> exam(@ModelAttribute MainSearch form) {
+        Map<String, Object> response = new HashMap<>();
+        List<ExamData> examDataList;
+        if(form.getType().equals("ALL")){
+            examDataList = examDataInfoService.findByExamId(form);
+        }else {
+            examDataList = examDataInfoService.findByYearAndExamId(form);
+        }
+        response.put("examDataList" , examDataList);
+        response.put("examOptions", selectOption.examOptions());
+        response.put("typeOptions" , selectOption.typeOptions());
+        response.put("yearOptions" , selectOption.yearOptions());
+
+
         return response;
     }
 

@@ -3,9 +3,9 @@
 
     <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->
     <div class="main-exam-form-box">
-        <form class="main-exam-form-1">
-            <input type="hidden" name="type" value="CONDITIONAL">
-            <select name="year" th:field="${search.year}">
+        <div class="main-exam-form-1">
+            <input type="hidden" name="type" value="CONDITIONAL" id="examType1">
+            <select name="year" th:field="${search.year}" id="examYear">
                 <option value="1" disabled selected>년도</option>
                 <option th:each="year : ${yearOptions}" th:value="${year}" th:text="${year}"></option>
             </select>
@@ -14,17 +14,17 @@
                 <option value="1" disabled selected>시험명</option>
                 <option th:each="exam : ${examOptions}" th:value="${exam.id}" th:text="${exam.examTitle}"></option>
             </select>
-            <button type="submit">찾기</button>
-        </form>
+            <button type="submit" id="main-exam-search-btn1">찾기</button>
+        </div>
 
-        <form class="main-exam-form-2">
-            <input type="hidden" name="type" value="ALL">
+        <div class="main-exam-form-2">
+            <input type="hidden" name="type" value="ALL" id="examType2">
             <select id="examSelect2" name="examId" th:field="${search.examId}">
                 <option value="1" disabled selected>시험명</option>
                 <option th:each="exam : ${examOptions}" th:value="${exam.id}" th:text="${exam.examTitle}"></option>
             </select>
-            <button type="submit">찾기</button>
-        </form>
+            <button type="submit" id="main-exam-search-btn2">찾기</button>
+        </div>
     </div>
     <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->
 
