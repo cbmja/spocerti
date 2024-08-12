@@ -10,20 +10,20 @@
                 <option th:each="year : ${yearOptions}" th:value="${year}" th:text="${year}"></option>
             </select>
 
-            <select id="examSelect1" name="examId" th:field="${search.examId}">
+            <select name="examId" th:field="${search.examId}" id="examSelect1">
                 <option value="1" disabled selected>시험명</option>
                 <option th:each="exam : ${examOptions}" th:value="${exam.id}" th:text="${exam.examTitle}"></option>
             </select>
-            <button type="submit" id="main-exam-search-btn1">찾기</button>
+            <button type="button" id="main-exam-search-btn1">찾기</button>
         </div>
 
         <div class="main-exam-form-2">
             <input type="hidden" name="type" value="ALL" id="examType2">
-            <select id="examSelect2" name="examId" th:field="${search.examId}">
+            <select name="examId" th:field="${search.examId}" id="examSelect2">
                 <option value="1" disabled selected>시험명</option>
                 <option th:each="exam : ${examOptions}" th:value="${exam.id}" th:text="${exam.examTitle}"></option>
             </select>
-            <button type="submit" id="main-exam-search-btn2">찾기</button>
+            <button type="button" id="main-exam-search-btn2">찾기</button>
         </div>
     </div>
     <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->
