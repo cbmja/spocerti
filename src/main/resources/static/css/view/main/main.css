@@ -68,7 +68,6 @@
 .main-exam-list thead{
     position: sticky;
     top: 0;
-    z-index: 1000;
     width: 100%;
     background-color: #ffffff;
     border: 2px solid #000; /* 검은색 실선 테두리 */
