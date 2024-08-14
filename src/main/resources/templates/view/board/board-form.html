@@ -1,5 +1,5 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<form th:fragment="board-form" class="board-form-ar">
+<form th:fragment="board-form" class="board-form-ar" id="board-form">
 
     <div class="board-form-ar1">
         <label for="board-title">title:</label>
@@ -10,12 +10,12 @@
 
     </div>
     <div class="board-form-ar2">
-            <textarea class="board-content"></textarea>
+        <textarea class="board-content" name="content"></textarea>
 
     </div>
     <div class="board-form-ar3">
         <label for="board-poster-password">password:</label>
-        <input type="text" id="board-poster-password"/>
+        <input type="text" id="board-poster-password" name="password"/>
         <button type="submit">저장</button>
     </div>
 

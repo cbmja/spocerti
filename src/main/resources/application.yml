@@ -20,7 +20,7 @@ spring:
 
 mybatis:
   mapper-locations: mapper/*.xml
-  type-aliases-package: com.spo.certificate.exam.dto,com.spo.certificate.main.controller
+  type-aliases-package: com.spo.certificate.exam.dto,com.spo.certificate.main.controller,com.spo.certificate.board.dto
   configuration:
     map-underscore-to-camel-case: true
 
