@@ -82,6 +82,7 @@ public class MainPageController {
         model.addAttribute("typeOptions",selectOption.typeOptions());
         model.addAttribute("yearOptions",selectOption.yearOptions());
         model.addAttribute("search",form);
+        model.addAttribute("pageType","main");
 
         return "view/main/main";
     }

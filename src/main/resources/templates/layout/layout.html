@@ -13,13 +13,15 @@
     <link rel="stylesheet" th:href="@{/css/layout/layouts.css}">
     <!-- 레이아웃 css -->
 
-    <!-- 메인 화면 css -->
-    <link rel="stylesheet" th:href="@{/css/view/main/main.css}">
-    <!-- 메인 화면 css -->
+    <!-- 메인 -->
+    <th:block th:if="${pageType == 'main'}">
+        <link rel="stylesheet" th:href="@{/css/view/main/main.css}">
+    </th:block>
+    <!-- 게시판 -->
+    <th:block th:if="${pageType == 'board'}">
+        <link rel="stylesheet" th:href="@{/css/view/board/board.css}">
+    </th:block>
 
-    <!-- 게시판 css -->
-    <link rel="stylesheet" th:href="@{/css/view/board/board.css}">
-    <!-- 게시판 css -->
 
 <style>
 
@@ -47,8 +49,14 @@
 
 
 <!-- 메인 -->
-<script th:src="@{/js/view/main/main.js}"></script>
+<th:block th:if="${pageType == 'main'}">
+    <script th:src="@{/js/view/main/main.js}"></script>
+</th:block>
+
 <!-- 게시판 -->
-<script th:src="@{/js/view/board/board.js}"></script>
+<th:block th:if="${pageType == 'board'}">
+    <script th:src="@{/js/view/board/board.js}"></script>
+</th:block>
+
 </body>
 </html>

@@ -28,6 +28,8 @@ public class BoardController {
 
         model.addAttribute("board" , boardInfoService.findByBoardType(boardSearch.getBoardType()));
         model.addAttribute("page" , page);
+        model.addAttribute("pageType","board");
+
         return "view/board/board";
     }
 
