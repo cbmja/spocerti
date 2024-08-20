@@ -47,15 +47,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById('board-detail-poster').textContent = '글쓴이 : ' + boardData.userId;
                     document.getElementById('board-detail-content').textContent = boardData.content;
 
-                    console.log("ggggg");
-/*                    // board-list 숨기기
-                    document.querySelector('.board-list-ar').style.display = 'none';
 
-                    // board-detail 보이기
-                    document.getElementById('board-detail').style.display = 'block';*/
                 } else if (xhr.readyState === 4) {
                     console.error('Error loading board detail:', xhr.statusText);
-                    console.log("ddddd");
+
                 }
             };
 
