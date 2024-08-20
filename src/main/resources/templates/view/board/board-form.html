@@ -5,8 +5,8 @@
         <label for="board-title">title:</label>
         <input type="text" id="board-title"/>
 
-        <label for="board-poster">poster:</label>
-        <input type="text" id="board-poster"/>
+        <label for="userId">poster:</label>
+        <input type="text" id="userId"/>
 
     </div>
     <div class="board-form-ar2">
@@ -18,6 +18,6 @@
         <input type="text" id="board-poster-password" name="password"/>
         <button type="submit">저장</button>
     </div>
-
+    <input type="hidden" name="boardType" th:value="${board.boardType}" id="boardType">
 </form>
 </html>

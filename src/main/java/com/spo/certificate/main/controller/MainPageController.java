@@ -27,6 +27,7 @@ public class MainPageController {
     private final ExamDataInfoService examDataInfoService;
     private final SelectOption selectOption;
 
+    //우측 필수과목 검색
     @GetMapping("/main/subject")
     @ResponseBody
     public Map<String, Object> subject(@RequestParam(value = "examId", defaultValue = "1") int id) {
@@ -47,6 +48,7 @@ public class MainPageController {
         return response;
     }
 
+    //좌측 시험 검색
     @GetMapping("/main/exam")
     @ResponseBody
     public Map<String, Object> exam(@ModelAttribute MainSearch form) {
@@ -66,7 +68,8 @@ public class MainPageController {
         return response;
     }
 
-    @GetMapping("/main/main")
+    //메인 페이지
+    @GetMapping("/main")
     public String mainPage(Model model , @ModelAttribute MainSearch form){
 
 

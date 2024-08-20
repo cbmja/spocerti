@@ -2,7 +2,7 @@ package com.spo.certificate;
 
 
 import com.spo.certificate.board.dto.BoardData;
-import com.spo.certificate.board.service.BoardDataSaveService;
+import com.spo.certificate.board.service.boardData.BoardDataSaveService;
 import com.spo.certificate.exam.service.exam.ExamInfoService;
 import com.spo.certificate.exam.service.examData.ExamDataSaveService;
 import org.junit.jupiter.api.Test;
@@ -29,7 +29,7 @@ class CertificateApplicationTests {
 		boardData.setUserId("비회원");
 		boardData.setCreatedAt(LocalDateTime.now());
 		boardData.setViewCnt(0);
-		boardData.setBoardId("free");
+		//boardData.setBoardId("free");
 		boardData.setLikes(0);
 
 		boardDataSaveService.save(boardData);

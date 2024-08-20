@@ -1,4 +1,4 @@
-package com.spo.certificate.board.service;
+package com.spo.certificate.board.service.boardData;
 
 import com.spo.certificate.board.dto.BoardData;
 import com.spo.certificate.exam.dto.ExamData;

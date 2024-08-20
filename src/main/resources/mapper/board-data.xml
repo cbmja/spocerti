@@ -6,8 +6,31 @@
 
 <!--insert-->
     <insert id="save" parameterType="BoardData">
-        INSERT INTO board_data (title , content , user_id , created_at , view_cnt , board_id , likes)
-        VALUES(#{title} , #{content} , #{userId} , #{createdAt} , #{viewCnt} , #{boardId} , #{likes})
+        INSERT INTO board_data (title , content , user_id , created_at , view_cnt , board_type , likes)
+        VALUES(#{title} , #{content} , #{userId} , NOW() , #{viewCnt} , #{boardType} , #{likes})
     </insert>
 <!--insert-->
+
+
+<!--select-->
+    <select id="getTotal" parameterType="BoardSearch" resultType="int">
+        SELECT COUNT(*) FROM board_data
+        WHERE board_type = #{boardType}
+        <if test="search != null and search != ''">
+            AND ${searchType} LIKE CONCAT('%', #{search}, '%')
+        </if>
+    </select>
+
+    <select id="findByPage" parameterType="Page" resultType="BoardData">
+        SELECT * FROM board_data
+        WHERE board_type = #{boardType} AND ${searchType} LIKE CONCAT('%', #{search}, '%')
+        ORDER BY created_at ASC
+        LIMIT #{startNum}, #{pageElement}
+    </select>
+
+    <select id="findById" parameterType="int" resultType="BoardData">
+        SELECT * FROM board_data WHERE id = #{id}
+    </select>
+
+<!--select-->
 </mapper>

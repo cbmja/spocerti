@@ -2,9 +2,16 @@
 <section th:fragment="board-list" class="board-list-ar">
 
 
-    <div class="board-list-form-box">
-        검색폼 div
-    </div>
+    <form class="board-list-form-box" action="/board/list">
+        <input type="hidden" name="boardType" th:value="${board.boardType}">
+        <select name="searchType" th:filed="${page.searchType}">
+            <option value="title">title</option>
+            <option value="content">content</option>
+            <option value="poster">poster</option>
+        </select>
+        <input type="text" name="search" th:field="${page.search}">
+        <button type="submit">검색</button>
+    </form>
     <div class="board-list">
         <table>
             <thead>
@@ -18,201 +25,30 @@
             </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
+                <tr th:each="boardData : ${boardList}" class="board-detail-row" th:data-id="${boardData.id}">
+                    <td th:text="${boardData.id}"></td>
+                    <td th:text="${boardData.title}"></td>
+                    <td th:text="${boardData.createdAt}"></td>
+                    <td th:text="${boardData.likes}"></td>
+                    <td>0</td>
+                    <td th:text="${boardData.userId}"></td>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>생체 2급 3번 질문</td>
-                    <td>2024-08-21</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>글쓴이</td>
-                </tr>
-
             </tbody>
         </table>
     </div>
+    <a th:href="@{/board/list(page=1, boardType=${page.boardType}, search=${page.search})}"><<</a>
+    <a th:href="@{/board/list(page=${page.page - 1}, boardType=${page.boardType}, search=${page.search})}"><</a>
+
+
+    <span th:each="i : ${#numbers.sequence(page.startPage, page.endPage)}">
+        <a th:href="@{/board/list(page=${i}, boardType=${page.boardType}, search=${page.search})}" th:text="${i}"></a>
+    </span>
+
+    <a th:href="@{/board/list(page=${page.page + 1}, boardType=${page.boardType}, search=${page.search})}">></a>
+    <a th:href="@{/board/list(page=${page.totalPage}, boardType=${page.boardType}, search=${page.search})}">>></a>
+    <!-- 작성 버튼 -->
+    <button onclick="hideDetail()">작성</button>
+    <!-- 보기 버튼 -->
+    <!--<button onclick="hideForm()">조회</button>-->
 </section>
 </html>

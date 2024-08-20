@@ -15,6 +15,6 @@ public class BoardData {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private int viewCnt;
-    private String boardId;
+    private String boardType;
     private int likes;
 }

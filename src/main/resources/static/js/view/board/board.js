@@ -16,6 +16,58 @@ function hideForm() {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    var rows = document.querySelectorAll('.board-detail-row');
+
+    rows.forEach(function(row) {
+        row.addEventListener('click', function() {
+            hideForm();
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var rows = document.querySelectorAll('.board-detail-row');
+
+    rows.forEach(function(row) {
+        row.addEventListener('click', function() {
+            var id = row.getAttribute('data-id');
+
+            // Ajax 요청으로 게시물 상세 정보 가져오기
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/board/detail/' + id, true); // 서버에서 게시물 상세 정보를 제공하는 URL
+            xhr.setRequestHeader('Content-Type', 'application/json');
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var boardData = JSON.parse(xhr.responseText);
+
+                    // board-detail 섹션에 데이터 채우기
+                    document.getElementById('board-detail-title').textContent = '제목 : ' + boardData.title;
+                    document.getElementById('board-detail-poster').textContent = '글쓴이 : ' + boardData.userId;
+                    document.getElementById('board-detail-content').textContent = boardData.content;
+
+                    console.log("ggggg");
+/*                    // board-list 숨기기
+                    document.querySelector('.board-list-ar').style.display = 'none';
+
+                    // board-detail 보이기
+                    document.getElementById('board-detail').style.display = 'block';*/
+                } else if (xhr.readyState === 4) {
+                    console.error('Error loading board detail:', xhr.statusText);
+                    console.log("ddddd");
+                }
+            };
+
+            xhr.send();
+        });
+    });
+});
+
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
     var form = document.getElementById('board-form');
@@ -25,9 +77,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // 폼 데이터 수집
         var formData = {
             title: document.getElementById('board-title').value,
-            poster: document.getElementById('board-poster').value,
+            userId: document.getElementById('userId').value,
             content: document.querySelector('.board-content').value,
-            password: document.getElementById('board-poster-password').value
+            password: document.getElementById('board-poster-password').value,
+            boardType: document.getElementById('boardType').value
         };
 
         if (!formData.title || formData.title.trim() === "") {
