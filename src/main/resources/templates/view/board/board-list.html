@@ -4,10 +4,10 @@
 
     <form class="board-list-form-box" action="/board/list">
         <input type="hidden" name="boardType" th:value="${board.boardType}">
-        <select name="searchType" th:filed="${page.searchType}">
+        <select name="searchType" th:field="${page.searchType}">
             <option value="title">title</option>
             <option value="content">content</option>
-            <option value="poster">poster</option>
+            <option value="user_id">poster</option>
         </select>
         <input type="text" name="search" th:field="${page.search}">
         <button type="submit">검색</button>

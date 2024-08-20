@@ -40,7 +40,6 @@ document.getElementById('examSelect2').addEventListener('change',function(){
 
 document.getElementById('main-subject-search-btn').addEventListener('click', function() {
     var subjectSelect1 = document.getElementById('subjectSelect1').value;
-    console.log(subjectSelect1);
     if(subjectSelect1 === "0") {
         alert("시험명을 선택하세요.");
         return;
@@ -126,7 +125,6 @@ document.getElementById('main-exam-search-btn1').addEventListener('click', funct
         if (xhr.readyState == 4 && xhr.status == 200) {
             var response = JSON.parse(xhr.responseText);
             /* 화면 업데이트 하는 메서드 */
-            console.log(response);
             updateExamList(response);
         }
     };
@@ -151,7 +149,6 @@ document.getElementById('main-exam-search-btn2').addEventListener('click', funct
         if (xhr.readyState == 4 && xhr.status == 200) {
             var response = JSON.parse(xhr.responseText);
             /* 화면 업데이트 하는 메서드 */
-            console.log(response);
             updateExamList(response);
         }
     };
