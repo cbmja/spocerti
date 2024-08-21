@@ -96,3 +96,48 @@ window.onload = function() {
 
     });
 };
+
+
+
+document.getElementById('take-exam').addEventListener('click', function() {
+    // 배열을 생성하여 체크된 항목의 값을 저장
+    const selectedSubjects = [];
+
+    // class="requiredSubject"에서 체크된 항목의 값을 수집
+    const requiredCheckboxes = document.querySelectorAll('.requiredSubject:checked');
+    requiredCheckboxes.forEach(function(checkbox) {
+        selectedSubjects.push(checkbox.value);
+    });
+
+    // class="electiveSubject"에서 체크된 항목의 값을 수집
+    const electiveCheckboxes = document.querySelectorAll('.electiveSubject:checked');
+    electiveCheckboxes.forEach(function(checkbox) {
+        selectedSubjects.push(checkbox.value);
+    });
+
+    // 결과 출력 (디버깅용)
+    console.log('선택된 과목들의 ID:', selectedSubjects);
+
+    // 수집한 과목의 수만큼 textarea 생성
+    const examQuestionArea = document.getElementById('exam_question_area');
+    examQuestionArea.innerHTML = ''; // 기존의 내용을 모두 지움
+
+    selectedSubjects.forEach(function(subjectId) {
+        // div 요소 생성
+        const div = document.createElement('div');
+        div.setAttribute('data-subjectId', subjectId);
+        // textarea 요소 생성
+        const textarea = document.createElement('textarea');
+        textarea.setAttribute('data-subjectId', subjectId);
+        textarea.id = 'grading-subject-' + subjectId;
+        textarea.placeholder = 'Subject ID: ' + subjectId;
+
+        // 생성한 textarea를 div에 추가
+        div.appendChild(textarea);
+
+        // 생성한 div를 exam_question_area에 추가
+        examQuestionArea.appendChild(div);
+    });
+});
+
+

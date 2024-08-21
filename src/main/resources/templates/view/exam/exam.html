@@ -52,22 +52,11 @@
         <input type="hidden" name="type" th:value="${examData.type}"> <!--타입-->
         <input type="hidden" name="year" th:value="${examData.year}"> <!--년도-->
         <input type="hidden" name="examDataId" th:value="${examData.id}"> <!--응시한 시험id-->
-        <div>
-            <textarea id="grading-subject-1" data-subjectId="4"></textarea>
-        <div>
-            <textarea id="grading-subject-2" data-subjectId="6"></textarea>
-        </div>
-        <div>
-            <textarea id="grading-subject-3" data-subjectId="7"></textarea>
-        </div>
-        <div>
-            <textarea id="grading-subject-4" data-subjectId="8"></textarea>
-        </div>
-        <div>
-            <textarea id="grading-subject-5" data-subjectId="10"></textarea>
+        <div id="exam_question_area">
+
         </div>
         <input type="submit" id="grading-btn"/>
-    </div>
+
     </form>
 <!-- 시험 -->
 <script th:src="@{/js/view/exam/exam.js}"></script>
