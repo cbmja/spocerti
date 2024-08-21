@@ -28,7 +28,8 @@
     <div>
         필수과목 :
         <span th:each="subject : ${requiredSubjects}">
-            [ [[${subject.subjectTitle}]] ]
+            <label th:for="${subject.id}"> [[${subject.subjectTitle}]] </label>
+            [<input type="checkbox" class="requiredSubject" th:value="${subject.id}" th:id="${subject.id}" checked disabled>]
         </span>
     </div>
     <hr>
@@ -67,7 +68,7 @@
         </div>
         <input type="submit" id="grading-btn"/>
     </div>
-
+    </form>
 <!-- 시험 -->
 <script th:src="@{/js/view/exam/exam.js}"></script>
 
