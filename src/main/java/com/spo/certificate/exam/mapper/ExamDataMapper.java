@@ -12,7 +12,9 @@ public interface ExamDataMapper {
 
     List<ExamData> findByYearAndExamId(MainSearch form);
 
-    List<ExamData> findByExamId(MainSearch form);
+    List<ExamData> findByExamId(int examId);
+
+    ExamData findById(int examDataId);
 
 
 

@@ -14,12 +14,17 @@ public class ExamDataInfoService {
 
     private final SqlSessionTemplate sql;
 
+    public ExamData findById(int examDataId){
+
+        return sql.selectOne("com.spo.certificate.exam.mapper.ExamDataMapper.findById",examDataId);
+    }
+
     public List<ExamData> findByYearAndExamId(MainSearch form){
 
         return sql.selectList("com.spo.certificate.exam.mapper.ExamDataMapper.findByYearAndExamId",form);
     }
-    public List<ExamData> findByExamId(MainSearch form){
+    public List<ExamData> findByExamId(int examId){
 
-        return sql.selectList("com.spo.certificate.exam.mapper.ExamDataMapper.findByExamId",form);
+        return sql.selectList("com.spo.certificate.exam.mapper.ExamDataMapper.findByExamId",examId);
     }
 }

@@ -12,10 +12,47 @@
 </head>
 <body>
 
-시험지
 
-
-
+<div>
+   시험명 : [[${examData.fileName}]]
+</div>
+<hr>
+<div>
+    년도 : [[${examData.year}]]
+</div>
+<hr>
+<div>
+    타입 : [[${examData.type}]]
+</div>
+<hr>
+<div>
+    필수과목 :
+    <span th:each="subject : ${requiredSubjects}">
+        [ [[${subject.subjectTitle}]] ]
+    </span>
+</div>
+<hr>
+<div>
+    선택과목 :
+    <span th:each="subject : ${electiveSubjects}">
+        [ [[${subject.subjectTitle}]] ]
+    </span>
+     / 중 [[${electiveCnt}]] 과목 필수선택
+</div>
+<hr><hr><hr>
+위에서 필수과목 선택시 아래에 선택한 과목들만 나오도록
+<hr><hr><hr>
+<form>
+    <input type="hidden" name="examDataId" th:value="${examDataId}">
+    <textarea name="subject-1"></textarea>
+    <textarea name="subject-2"></textarea>
+    <textarea name="subject-3"></textarea>
+    <textarea name="subject-4"></textarea>
+    <textarea name="subject-5"></textarea>
+    <textarea name="subject-6"></textarea>
+    <textarea name="subject-7"></textarea>
+    <input type="submit"/>
+</form>
 
 </body>
 </html>

@@ -55,7 +55,7 @@ public class MainPageController {
         Map<String, Object> response = new HashMap<>();
         List<ExamData> examDataList;
         if(form.getType().equals("ALL")){
-            examDataList = examDataInfoService.findByExamId(form);
+            examDataList = examDataInfoService.findByExamId(form.getExamId());
         }else {
             examDataList = examDataInfoService.findByYearAndExamId(form);
         }
@@ -74,7 +74,7 @@ public class MainPageController {
 
 
         if(form.getType().equals("ALL")){
-            model.addAttribute("examDataList",examDataInfoService.findByExamId(form));
+            model.addAttribute("examDataList",examDataInfoService.findByExamId(form.getExamId()));
         }else {
             model.addAttribute("examDataList",examDataInfoService.findByYearAndExamId(form));
         }
