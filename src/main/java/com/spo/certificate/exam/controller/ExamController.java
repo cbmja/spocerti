@@ -7,15 +7,18 @@ import com.spo.certificate.exam.service.exam.ExamInfoService;
 import com.spo.certificate.exam.service.examData.ExamDataInfoService;
 import com.spo.certificate.exam.service.subject.SubjectInfoService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Controller
@@ -26,12 +29,13 @@ public class ExamController {
     private final SubjectInfoService subjectInfoService;
     private final ExamInfoService examInfoService;
 
-    @PostMapping
-    public String grading(){
+    @PostMapping("/exam/grading")
+    public ResponseEntity<String> grading(@RequestBody Map<String, String> formData) {
+        // formData 처리 로직
+        System.out.println(formData);
 
-
-
-        return "";
+        // 성공 메시지와 함께 HTTP 200 상태 코드를 반환
+        return ResponseEntity.ok("Grading data received and processed successfully.");
     }
 
     @GetMapping("/exam")

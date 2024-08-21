@@ -13,46 +13,62 @@
 <body>
 
 
-<div>
-   시험명 : [[${examData.fileName}]]
-</div>
-<hr>
-<div>
-    년도 : [[${examData.year}]]
-</div>
-<hr>
-<div>
-    타입 : [[${examData.type}]]
-</div>
-<hr>
-<div>
-    필수과목 :
-    <span th:each="subject : ${requiredSubjects}">
-        [ [[${subject.subjectTitle}]] ]
-    </span>
-</div>
-<hr>
-<div>
-    선택과목 :
-    <span th:each="subject : ${electiveSubjects}">
-        [ [[${subject.subjectTitle}]] ]
-    </span>
-     / 중 [[${electiveCnt}]] 과목 필수선택
-</div>
-<hr><hr><hr>
-위에서 필수과목 선택시 아래에 선택한 과목들만 나오도록
-<hr><hr><hr>
-<form>
-    <input type="hidden" name="examDataId" th:value="${examDataId}">
-    <textarea name="subject-1"></textarea>
-    <textarea name="subject-2"></textarea>
-    <textarea name="subject-3"></textarea>
-    <textarea name="subject-4"></textarea>
-    <textarea name="subject-5"></textarea>
-    <textarea name="subject-6"></textarea>
-    <textarea name="subject-7"></textarea>
-    <input type="submit"/>
-</form>
+    <div>
+       시험명 : [[${examData.fileName}]]
+    </div>
+    <hr>
+    <div>
+        년도 : [[${examData.year}]]
+    </div>
+    <hr>
+    <div>
+        타입 : [[${examData.type}]]
+    </div>
+    <hr>
+    <div>
+        필수과목 :
+        <span th:each="subject : ${requiredSubjects}">
+            [ [[${subject.subjectTitle}]] ]
+        </span>
+    </div>
+    <hr>
+    <div id="electiveSubjectCnt" th:data-cnt="${electiveCnt}">
+        선택과목 :
+        <span th:each="subject : ${electiveSubjects}">
+            <label th:for="${subject.id}"> [[${subject.subjectTitle}]] </label>
+            [<input type="checkbox" class="electiveSubject" th:value="${subject.id}" th:id="${subject.id}" >]
+            &nbsp;/&nbsp;
+        </span>
+         중 [[${electiveCnt}]] 과목 필수선택
+    </div>
+    <button type="button" id="take-exam">응시 과목 선택</button>
+    <hr><hr><hr>
+    응시과목 선택 버튼 누르면 아래에 해당 과목 시험지만 나오도록
+    위에 년도 , 타입 정보 있으니까 그 정보로 아래에 hidden 으로 넣어줌
+    <hr><hr><hr>
+    <form id="grading-form">
+        <input type="hidden" name="type" th:value="${examData.type}"> <!--타입-->
+        <input type="hidden" name="year" th:value="${examData.year}"> <!--년도-->
+        <input type="hidden" name="examDataId" th:value="${examData.id}"> <!--응시한 시험id-->
+        <div>
+            <textarea id="grading-subject-1" data-subjectId="4"></textarea>
+        <div>
+            <textarea id="grading-subject-2" data-subjectId="6"></textarea>
+        </div>
+        <div>
+            <textarea id="grading-subject-3" data-subjectId="7"></textarea>
+        </div>
+        <div>
+            <textarea id="grading-subject-4" data-subjectId="8"></textarea>
+        </div>
+        <div>
+            <textarea id="grading-subject-5" data-subjectId="10"></textarea>
+        </div>
+        <input type="submit" id="grading-btn"/>
+    </div>
+
+<!-- 시험 -->
+<script th:src="@{/js/view/exam/exam.js}"></script>
 
 </body>
 </html>
