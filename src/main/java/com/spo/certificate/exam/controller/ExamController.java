@@ -32,7 +32,7 @@ public class ExamController {
     @PostMapping("/exam/grading")
     public ResponseEntity<String> grading(@RequestBody Map<String, String> formData) {
         System.out.println(formData);
-
+        //채점 로직 구현
         return ResponseEntity.ok("Grading data received and processed successfully.");
     }
 
