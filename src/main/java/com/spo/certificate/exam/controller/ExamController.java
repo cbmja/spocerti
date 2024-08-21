@@ -31,10 +31,8 @@ public class ExamController {
 
     @PostMapping("/exam/grading")
     public ResponseEntity<String> grading(@RequestBody Map<String, String> formData) {
-        // formData 처리 로직
         System.out.println(formData);
 
-        // 성공 메시지와 함께 HTTP 200 상태 코드를 반환
         return ResponseEntity.ok("Grading data received and processed successfully.");
     }
 
