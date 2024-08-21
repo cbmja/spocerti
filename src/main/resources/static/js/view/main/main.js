@@ -167,12 +167,21 @@ var tableBody = document.getElementById('examListBody');
                             +"<td>"+data.examDataList[i].year+"</td>"
                             +"<td class='main-exam-filename'>"+data.examDataList[i].fileName+"</td>"
                             +"<td>"+data.examDataList[i].type+"</td>"
-                            +"<td> <button type='button'>모의시험</button> </td>"
+                            +"<td> <button class='exam-btn' type='button' data-url='/exam?examId=" + data.examDataList[i].id + "'>모의시험</button> </td>"
                             +"<td> <a href='#'>문제</a> / <a href='#'>정답</a> </td>"
                             +"</tr>";
 
         }
         tableBody.innerHTML = tableContent;
+
+            const examButtons = document.querySelectorAll('.exam-btn');
+            examButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const url = this.getAttribute('data-url');
+                    window.open(url, '_blank');
+                });
+            });
+
     }
 }
 
