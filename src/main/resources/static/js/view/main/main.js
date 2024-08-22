@@ -72,7 +72,7 @@ $(document).ready(function() {
                                 '<td style="border: 1px solid black;">' + item.year + '</td>' +
                                 '<td style="border: 1px solid black;">' + item.examTitle + '</td>' +
                                 '<td style="border: 1px solid black;">' +
-                                '<select name="type"><option value="1">Type 1</option><option value="2">Type 2</option></select>' +
+                                '<select name="type"><option value="A">A</option><option value="B">B</option></select>' +
                                 '</td>' +
                                 '<td style="border: 1px solid black;"><button type="button">응시</button></td>' +
                                 '</tr>';

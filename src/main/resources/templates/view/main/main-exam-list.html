@@ -1,5 +1,5 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<section th:fragment="main-exam-list" class="main-exam-ar">
+<section th:fragment="main-exam-list" class="main-exam-ar" style="display: flex; justify-content: flex-start; ">
 
     <div>
         <form>
@@ -12,10 +12,9 @@
             </select>
             <button type="button" id="main-exam-search-btn">찾기</button>
         </form>
-    </div>
     <hr>
-    <div>
-        <table style="border-collapse: collapse; border: 1px solid black; width: 70%;">
+    <div style="height: 500px; width: 600px;">
+        <table style="border-collapse: collapse; border: 1px solid black; width: 100%;">
             <thead>
             <tr>
                 <th style="border: 1px solid black;">년도</th>
@@ -31,6 +30,10 @@
             </tr>
             </tbody>
         </table>
+    </div>
+    </div>
+    <div style="height: 500px; width: 600px; background-color: blue;">
+
     </div>
 </section>
 </html>
