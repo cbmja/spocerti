@@ -66,7 +66,7 @@ $(document).ready(function() {
                                 '<td style="border: 1px solid black;">' + item.year + '</td>' +
                                 '<td style="border: 1px solid black;">' + item.examTitle + '</td>' +
                                 '<td style="border: 1px solid black;">' +
-                                '<select name="type" class="exam-type" id="exam-type-' + index + '">' +
+                                '<select name="type" class="exam-type">' +
                                 '<option value="A" selected>A</option>' +
                                 '<option value="B">B</option>' +
                                 '</select>' +
@@ -75,7 +75,7 @@ $(document).ready(function() {
                                 '</tr>';
                     });
 
-                    $('#exam-list').append(rows);
+                    tbody.append(rows);
                 } else {
                     var noResultRow = '<tr><td colspan="4" style="border: 1px solid black;">검색 결과가 없습니다.</td></tr>';
                     tbody.append(noResultRow);
@@ -88,12 +88,10 @@ $(document).ready(function() {
         });
     });
 
+
     // 이벤트 위임을 사용하여 동적으로 생성된 select 요소에 change 이벤트 바인딩
     $('#exam-list').on('change', '.exam-type', function() {
         var selectedType = $(this).val(); // 바뀐 type
-        var index = $(this).attr('id'); // id 속성을 가져옴
-
-        console.log("ID of changed select:", index);
 
         // 선택된 index에 해당하는 button의 data-examType 속성 업데이트
         var takeExamButton = $(this).closest('tr').find('.take-exam-btn');
