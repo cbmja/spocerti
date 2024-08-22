@@ -16,13 +16,13 @@ public class SelectOption {
     private final ExamInfoService examInfoService;
 
 
-    public List<Integer> yearOption(int startYear){
-        List<Integer> yearList = new ArrayList<>();
+    public List<String> yearOption(int code){
+        List<String> yearList = new ArrayList<>();
+        yearList.add("ALL");
 
-        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-
-        for (int year = startYear; year < currentYear; year++) {
-            yearList.add(year);
+        Exam exam = examInfoService.findByCode(code);
+        for(int i = exam.getStartYear(); i<= exam.getUpdateYear(); i++){
+            yearList.add(i+"");
         }
 
         return yearList;
@@ -35,6 +35,7 @@ public class SelectOption {
 
     public List<String> typeOption(){
         List<String> types = new ArrayList<>();
+        types.add("All");
         types.add("A");
         types.add("B");
         return types;

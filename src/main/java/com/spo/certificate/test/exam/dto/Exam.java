@@ -11,6 +11,7 @@ public class Exam {
     private int electiveSubjectCnt;
     private int vitalElectiveSubjectCnt;
     private int startYear;
+    private int updateYear;
 
 
 

@@ -6,6 +6,10 @@
 
 <!--select-->
 
+    <select id="findByCode" parameterType="int" resultType="Exam">
+        SELECT * FROM exam WHERE code = #{code}
+    </select>
+
     <select id="findAll" resultType="Exam">
         SELECT * FROM exam
     </select>

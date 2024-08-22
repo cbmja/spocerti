@@ -17,4 +17,8 @@ public class ExamInfoService {
         return sql.selectList("com.spo.certificate.test.exam.mapper.ExamMapper.findAll");
     }
 
+
+    public Exam findByCode(int code){
+        return sql.selectOne("com.spo.certificate.test.exam.mapper.ExamMapper.findByCode" , code);
+    }
 }

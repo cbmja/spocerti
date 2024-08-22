@@ -8,4 +8,6 @@ public interface ExamMapper {
 
     List<Exam> findAll();
 
+    Exam findByCode(int code);
+
 }
