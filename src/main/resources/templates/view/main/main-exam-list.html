@@ -1,51 +1,25 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <section th:fragment="main-exam-list" class="main-exam-ar">
 
-    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->
-    <div class="main-exam-form-box">
-        <div class="main-exam-form-1">
-            <input type="hidden" name="type" value="CONDITIONAL" id="examType1">
-            <select name="year" th:field="${search.year}" id="examYear">
-                <option value="1" disabled selected>년도</option>
-                <option th:each="year : ${yearOptions}" th:value="${year}" th:text="${year}"></option>
+    <div>
+        <form>
+            <select>
+                <option value="1" disabled selected>시험</option>
+                <option th:each="exam : ${examOpts}" th:text="${exam.title}" th:value="${exam.code}" th:field=""></option>
             </select>
 
-            <select name="examId" th:field="${search.examId}" id="examSelect1">
-                <option value="1" disabled selected>시험명</option>
-                <option th:each="exam : ${examOptions}" th:value="${exam.id}" th:text="${exam.examTitle}"></option>
+            <select>
+                <option value="1" disabled selected>타입</option>
+                <option th:each="type : ${typeOpts}" th:text="${type}" th:value="${type}"></option>
             </select>
-            <button type="button" id="main-exam-search-btn1">찾기</button>
-        </div>
-
-        <div class="main-exam-form-2">
-            <input type="hidden" name="type" value="ALL" id="examType2">
-            <select name="examId" th:field="${search.examId}" id="examSelect2">
-                <option value="1" disabled selected>시험명</option>
-                <option th:each="exam : ${examOptions}" th:value="${exam.id}" th:text="${exam.examTitle}"></option>
-            </select>
-            <button type="button" id="main-exam-search-btn2">찾기</button>
-        </div>
+            <button type="button">찾기</button>
+        </form>
     </div>
-    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->    <!-- 검색 폼 -->
+    <hr>
+    <div>
+        <table>
 
-    <!-- 시험 목록 -->    <!-- 시험 목록 -->    <!-- 시험 목록 -->    <!-- 시험 목록 -->    <!-- 시험 목록 -->    <!-- 시험 목록 -->    <!-- 시험 목록 -->
-    <div class="main-exam-list">
-    <table>
-        <thead>
-        <tr>
-            <th scope="col">year</th>
-            <th scope="col">title</th>
-            <th scope="col">type</th>
-            <th scope="col">test</th>
-            <th scope="col">download</th>
-        </tr>
-        </thead>
-        <tbody id="examListBody">
-
-        </tbody>
-    </table>
+        </table>
     </div>
-    <!-- 시험 목록 -->    <!-- 시험 목록 -->    <!-- 시험 목록 -->    <!-- 시험 목록 -->    <!-- 시험 목록 -->    <!-- 시험 목록 -->    <!-- 시험 목록 -->
-
 </section>
 </html>

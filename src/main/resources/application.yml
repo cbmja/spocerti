@@ -13,14 +13,14 @@ spring:
       suffix: .html
 
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/spocert?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://127.0.0.1:3306/spocerti_ver_2?serverTimezone=UTC&characterEncoding=UTF-8
     username: spocerti
     password: 8991
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis:
   mapper-locations: mapper/*.xml
-  type-aliases-package: com.spo.certificate.exam.dto,com.spo.certificate.main.controller,com.spo.certificate.board.dto,com.spo.certificate.board.controller,com.spo.certificate.pagination
+  type-aliases-package: com.spo.certificate.test.exam.dto
   configuration:
     map-underscore-to-camel-case: true
 

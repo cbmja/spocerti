@@ -17,14 +17,11 @@
     <th:block th:if="${pageType == 'main'}">
         <link rel="stylesheet" th:href="@{/css/view/main/main.css}">
     </th:block>
-    <!-- 게시판 -->
-    <th:block th:if="${pageType == 'board'}">
-        <link rel="stylesheet" th:href="@{/css/view/board/board.css}">
-    </th:block>
-    <!-- 시험 -->
+    <link rel="stylesheet" th:href="@{/css/view/main/main.css}">
 
 
-<style>
+
+    <style>
 
 </style>
 </head>
@@ -48,16 +45,6 @@
 
 
 
-
-<!-- 메인 -->
-<th:block th:if="${pageType == 'main'}">
-    <script th:src="@{/js/view/main/main.js}"></script>
-</th:block>
-
-<!-- 게시판 -->
-<th:block th:if="${pageType == 'board'}">
-    <script th:src="@{/js/view/board/board.js}"></script>
-</th:block>
 
 
 </body>

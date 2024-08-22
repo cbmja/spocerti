@@ -2,12 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.spo.certificate.exam.mapper.ExamMapper">
+<mapper namespace="com.spo.certificate.test.exam.mapper.ExamMapper">
 
 <!--select-->
-    <select id="findById"  parameterType="int" resultType="Exam">
-        SELECT * FROM exam WHERE id = #{id}
-    </select>
+
     <select id="findAll" resultType="Exam">
         SELECT * FROM exam
     </select>
