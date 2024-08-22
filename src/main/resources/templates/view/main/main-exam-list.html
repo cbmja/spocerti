@@ -10,17 +10,26 @@
             <select id="main-year-select">
                 <option value="" disabled selected>시험을 먼저 선택하세요</option>
             </select>
-            <select id="main-type-select">
-                <option value="" disabled selected>타입</option>
-                <option name="type" th:each="type : ${typeOpts}" th:text="${type}" th:value="${type}"></option>
-            </select>
-            <button type="button">찾기</button>
+            <button type="button" id="main-exam-search-btn">찾기</button>
         </form>
     </div>
     <hr>
     <div>
-        <table>
+        <table style="border-collapse: collapse; border: 1px solid black; width: 70%;">
+            <thead>
+            <tr>
+                <th style="border: 1px solid black;">년도</th>
+                <th style="border: 1px solid black;">시험명</th>
+                <th style="border: 1px solid black;">타입</th>
+                <th style="border: 1px solid black;">모의시험</th>
+            </tr>
+            </thead>
 
+            <tbody id="exam-list">
+            <tr>
+                <td colspan="4" style="border: 1px solid black;">시험을 선택하세요</td>
+            </tr>
+            </tbody>
         </table>
     </div>
 </section>

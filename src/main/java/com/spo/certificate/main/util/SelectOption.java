@@ -33,13 +33,6 @@ public class SelectOption {
         return examInfoService.findAll();
     }
 
-    public List<String> typeOption(){
-        List<String> types = new ArrayList<>();
-        types.add("All");
-        types.add("A");
-        types.add("B");
-        return types;
-    }
 
 
 
