@@ -5,14 +5,14 @@
         <form>
             <select id="main-exam-select">
                 <option value="" disabled selected>시험</option>
-                <option th:each="exam : ${examOpts}" th:text="${exam.title}" th:value="${exam.code}"></option>
+                <option name="examCode" th:each="exam : ${examOpts}" th:text="${exam.title}" th:value="${exam.code}"></option>
             </select>
             <select id="main-year-select">
-                <option value="" disabled selected>년도</option>
+                <option value="" disabled selected>시험을 먼저 선택하세요</option>
             </select>
             <select id="main-type-select">
                 <option value="" disabled selected>타입</option>
-                <option th:each="type : ${typeOpts}" th:text="${type}" th:value="${type}"></option>
+                <option name="type" th:each="type : ${typeOpts}" th:text="${type}" th:value="${type}"></option>
             </select>
             <button type="button">찾기</button>
         </form>

@@ -17,7 +17,7 @@ $(document).ready(function() {
 
                 // 반환된 연도 리스트를 반복하며 옵션 추가
                 $.each(response, function(index, year) {
-                    yearSelect.append('<option value="' + year + '">' + year + '</option>');
+                    yearSelect.append('<option name="year" value="' + year + '">' + year + '</option>');
                 });
             },
             error: function(error) {
