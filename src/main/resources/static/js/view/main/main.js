@@ -1,12 +1,13 @@
-
 /*시험 '선택'시 동적으로 년도 select 생성*/
 $(document).ready(function() {
+
+
     $('#main-exam-select').change(function() {
         var selectedExamCode = $(this).val();
         $.ajax({
             url: '/main/exam/select',
             type: 'GET',
-            data: { code: selectedExamCode },
+            data: { code: selectedExamCode } ,
             success: function(response) {
                 // response는 서버에서 반환된 연도 리스트 (List<String>)
                 var yearSelect = $('#main-year-select');
@@ -30,58 +31,52 @@ $(document).ready(function() {
             }
         });
     });
-});
+
 
 /*시험 '선택'시 동적으로 년도 select 생성*/
 
-
-/*시험 '검색'시 목록 생성*/
-$(document).ready(function() {
+// 시험 '검색' 시 목록 생성
     $('#main-exam-search-btn').click(function() {
-        // 선택된 값들을 가져옴
         var examCode = $('#main-exam-select').val();
         var year = $('#main-year-select').val();
 
-        // 데이터가 제대로 선택되지 않은 경우 경고
         if (!examCode || !year) {
             alert("시험, 년도를 모두 선택하세요.");
             return;
         }
 
         var form = {
-                    "examCode": examCode,
-                    "year": year
-                    };
+            "examCode": examCode,
+            "year": year
+        };
 
-        // AJAX 요청으로 서버에서 데이터를 가져옴
         $.ajax({
             url: '/main/exam/search',
             type: 'GET',
             data: form,
             success: function(response) {
-                // 기존의 tbody 내용을 비움
                 var tbody = $('#exam-list');
                 tbody.empty();
 
-                // 새로운 데이터를 추가
                 if (response && response.length > 0) {
-                    var rows = ''; // 문자열을 저장할 변수
+                    var rows = '';
 
                     $.each(response, function(index, item) {
                         rows += '<tr>' +
                                 '<td style="border: 1px solid black;">' + item.year + '</td>' +
                                 '<td style="border: 1px solid black;">' + item.examTitle + '</td>' +
                                 '<td style="border: 1px solid black;">' +
-                                '<select name="type"><option value="A">A</option><option value="B">B</option></select>' +
+                                '<select name="type" class="exam-type" id="exam-type-' + index + '">' +
+                                '<option value="A" selected>A</option>' +
+                                '<option value="B">B</option>' +
+                                '</select>' +
                                 '</td>' +
-                                '<td style="border: 1px solid black;"><button type="button">응시</button></td>' +
+                                '<td style="border: 1px solid black;"><button type="button" class="take-exam-btn" data-examCode="' + examCode + '" data-examYear="' + item.year + '" data-examType="A">응시</button></td>' +
                                 '</tr>';
                     });
 
-                    // 조합된 문자열을 한 번에 append
                     $('#exam-list').append(rows);
                 } else {
-                    // 결과가 없을 경우 표시할 내용
                     var noResultRow = '<tr><td colspan="4" style="border: 1px solid black;">검색 결과가 없습니다.</td></tr>';
                     tbody.append(noResultRow);
                 }
@@ -92,5 +87,32 @@ $(document).ready(function() {
             }
         });
     });
+
+    // 이벤트 위임을 사용하여 동적으로 생성된 select 요소에 change 이벤트 바인딩
+    $('#exam-list').on('change', '.exam-type', function() {
+        var selectedType = $(this).val(); // 바뀐 type
+        var index = $(this).attr('id'); // id 속성을 가져옴
+
+        console.log("ID of changed select:", index);
+
+        // 선택된 index에 해당하는 button의 data-examType 속성 업데이트
+        var takeExamButton = $(this).closest('tr').find('.take-exam-btn');
+        takeExamButton.attr('data-examType', selectedType);
+
+        console.log("Updated Exam Type:", takeExamButton.attr('data-examType'));
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
-/*시험 '검색'시 목록 생성*/
