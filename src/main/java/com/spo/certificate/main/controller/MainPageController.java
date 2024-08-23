@@ -67,5 +67,11 @@ public class MainPageController {
         return response;
     }
 
+    @GetMapping("/main/exam/take")
+    public String takeExam(){
+
+        return "view/exam/take-exam";
+    }
+
 
 }

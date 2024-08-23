@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- 공통 css -->
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <!-- 공통 css -->
+
+    <script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+</head>
+<body>
+
+시험 응시 화면
+<hr>
+[[${examCode}]] 시험코드
+<hr>
+[[${examYear}]] 년도
+<hr>
+[[${examType}]] 타입
+<hr>
+[[${requiredSubject}]] 필수과목
+<hr>
+[[${electiveSubject}]] 선택과목
+<hr>
+[[${electiveSubjectCnt}]] 선택 수
+<hr>
+</body>
+</html>

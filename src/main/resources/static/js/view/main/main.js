@@ -71,7 +71,14 @@ $(document).ready(function() {
                                 '<option value="B">B</option>' +
                                 '</select>' +
                                 '</td>' +
-                                '<td style="border: 1px solid black;"><button type="button" class="take-exam-btn" data-exam-code="' + examCode + '" data-exam-year="' + item.year + '" data-exam-type="A">응시</button></td>' +
+                                '<td style="border: 1px solid black;">' +
+                                '<form action="/main/exam/take">'+
+                                '<input type="hidden" name="examCode" value='+examCode+'>'+
+                                '<input type="hidden" name="examYear" value='+item.year+'>'+
+                                '<input type="hidden" name="examType" value="A">'+
+                                '<button type="submit" class="take-exam-btn">응시</button>' +
+                                '</form>'+
+                                '</td>' +
                                 '</tr>';
                     });
 
@@ -92,30 +99,12 @@ $(document).ready(function() {
 
 
 
-    // type 변경시 data 값 변경
+    // type 변경시 form 값 변경
     $('#exam-list').on('change', '.exam-type', function() {
-        var selectedType = $(this).val(); // 바뀐 type
-
-        // 선택된 index에 해당하는 button의 data-examType 속성 업데이트
-        var takeExamButton = $(this).closest('tr').find('.take-exam-btn');
-        takeExamButton.data('exam-type', selectedType);
-
+        var selectedType = $(this).val(); // 선택된 type 값을 가져옴
+        var form = $(this).closest('tr').find('form');
+        form.find('input[name="examType"]').val(selectedType); // hidden 필드 값 업데이트
     });
-
-    // 응시
-    $('#exam-list').on('click', '.take-exam-btn', function() {
-        var examCode = $(this).data('exam-code');
-        var examYear = $(this).data('exam-year');
-        var examType = $(this).data('exam-type');
-    });
-
-
-
-
-
-
-
-
 
 
 
