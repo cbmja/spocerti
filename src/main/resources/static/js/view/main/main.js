@@ -1,7 +1,7 @@
-/*시험 '선택'시 동적으로 년도 select 생성*/
+
 $(document).ready(function() {
 
-
+/*시험 '선택'시 동적으로 년도 select 생성*/
     $('#main-exam-select').change(function() {
         var selectedExamCode = $(this).val();
         $.ajax({
@@ -31,9 +31,9 @@ $(document).ready(function() {
             }
         });
     });
-
-
 /*시험 '선택'시 동적으로 년도 select 생성*/
+
+
 
 // 시험 '검색' 시 목록 생성
     $('#main-exam-search-btn').click(function() {
@@ -92,7 +92,7 @@ $(document).ready(function() {
 
 
 
-    // 이벤트 위임을 사용하여 동적으로 생성된 select 요소에 change 이벤트 바인딩
+    // type 변경시 data 값 변경
     $('#exam-list').on('change', '.exam-type', function() {
         var selectedType = $(this).val(); // 바뀐 type
 
@@ -100,7 +100,6 @@ $(document).ready(function() {
         var takeExamButton = $(this).closest('tr').find('.take-exam-btn');
         takeExamButton.data('exam-type', selectedType);
 
-        console.log("Updated Exam Type:", takeExamButton.attr('data-exam-type'));
     });
 
     // 응시
@@ -108,10 +107,6 @@ $(document).ready(function() {
         var examCode = $(this).data('exam-code');
         var examYear = $(this).data('exam-year');
         var examType = $(this).data('exam-type');
-
-        console.log("Exam Code:", examCode);
-        console.log("Exam Year:", examYear);
-        console.log("Exam Type:", examType);
     });
 
 
