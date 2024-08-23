@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spo.certificate.test.examSubject.mapper.ExamSubjectMapper">
+
+    <!--select-->
+
+    <select id="findByExamCode" parameterType="int" resultType="ExamSubject">
+        SELECT * FROM exam_subject WHERE exam_code = #{examCode}
+    </select>
+
+    <select id="findAll" resultType="ExamSubject">
+        SELECT * FROM exam_subject
+    </select>
+    <!--select-->
+
+</mapper>
