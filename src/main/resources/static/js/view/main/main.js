@@ -71,7 +71,7 @@ $(document).ready(function() {
                                 '<option value="B">B</option>' +
                                 '</select>' +
                                 '</td>' +
-                                '<td style="border: 1px solid black;"><button type="button" class="take-exam-btn" data-examCode="' + examCode + '" data-examYear="' + item.year + '" data-examType="A">응시</button></td>' +
+                                '<td style="border: 1px solid black;"><button type="button" class="take-exam-btn" data-exam-code="' + examCode + '" data-exam-year="' + item.year + '" data-exam-type="A">응시</button></td>' +
                                 '</tr>';
                     });
 
@@ -89,18 +89,30 @@ $(document).ready(function() {
     });
 
 
+
+
+
     // 이벤트 위임을 사용하여 동적으로 생성된 select 요소에 change 이벤트 바인딩
     $('#exam-list').on('change', '.exam-type', function() {
         var selectedType = $(this).val(); // 바뀐 type
 
         // 선택된 index에 해당하는 button의 data-examType 속성 업데이트
         var takeExamButton = $(this).closest('tr').find('.take-exam-btn');
-        takeExamButton.attr('data-examType', selectedType);
+        takeExamButton.data('exam-type', selectedType);
 
-        console.log("Updated Exam Type:", takeExamButton.attr('data-examType'));
+        console.log("Updated Exam Type:", takeExamButton.attr('data-exam-type'));
     });
 
+    // 응시
+    $('#exam-list').on('click', '.take-exam-btn', function() {
+        var examCode = $(this).data('exam-code');
+        var examYear = $(this).data('exam-year');
+        var examType = $(this).data('exam-type');
 
+        console.log("Exam Code:", examCode);
+        console.log("Exam Year:", examYear);
+        console.log("Exam Type:", examType);
+    });
 
 
 

@@ -1,7 +1,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<section th:fragment="main-exam-list" class="main-exam-ar" style="display: flex; justify-content: flex-start; ">
+<section th:fragment="main-exam-list" class="main-exam-ar">
 
-    <div>
+<div style="display: flex; justify-content: center;">
+
+    <div style="height: 500px; width: 600px;">
         <form>
             <select id="main-exam-select">
                 <option value="" disabled selected>시험</option>
@@ -12,8 +14,7 @@
             </select>
             <button type="button" id="main-exam-search-btn">찾기</button>
         </form>
-    <hr>
-    <div style="height: 500px; width: 600px;">
+        <hr>
         <table style="border-collapse: collapse; border: 1px solid black; width: 100%;">
             <thead>
             <tr>
@@ -31,9 +32,10 @@
             </tbody>
         </table>
     </div>
-    </div>
-    <div style="height: 500px; width: 600px; background-color: blue;">
+
+    <div style="height: 500px; width: 600px; background-color: blue;" id="choose-subject">
 
     </div>
+</div>
 </section>
 </html>
