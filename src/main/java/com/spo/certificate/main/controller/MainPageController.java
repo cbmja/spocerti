@@ -68,7 +68,8 @@ public class MainPageController {
     }
 
     @GetMapping("/main/exam/take")
-    public String takeExam(){
+    public String takeExam(@RequestParam Map<String,String> form){
+        System.out.println(form);
 
         return "view/exam/take-exam";
     }
