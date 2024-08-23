@@ -125,7 +125,7 @@ public class MainPageController {
         model.addAttribute("electiveSubjects" , electiveSubjects);
         System.out.println(form);
 
-        return "view/exam/take-exam";
+        return "view/test/take-exam";
     }
 
 

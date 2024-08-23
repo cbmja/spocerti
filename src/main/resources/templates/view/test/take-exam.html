@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- 공통 css -->
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <!-- 공통 css -->
+
+    <script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+
+    <script th:src="@{/js/view/test/test.js}"></script>
+</head>
+<body>
+
+    시험명 : [[${exam.title}]]
+    <hr>
+    년도 : [[${year}]]
+    <hr>
+    타입 : [[${type}]]
+    <hr>
+    필수과목 : <span th:each="subject : ${requiredSubjects}">[ [[${subject.title}]] <input type="checkbox" name="requiredSubjectCode" th:value="${subject.code}" checked disabled>]&nbsp;</span>
+    <hr>
+    선택과목 : <span th:each="subject : ${electiveSubjects}">[ [[${subject.title}]] <input type="checkbox" class="elective-subject-checkbox" name="electiveSubjectCode" th:value="${subject.code}">]&nbsp;</span>/ [ [[${exam.vitalElectiveSubjectCnt}]] ]개 필수 선택
+    <button type="button" id="select-subject-btn" th:data-elecnt="${exam.vitalElectiveSubjectCnt}">과목 선택 완료</button>
+    <hr>
+    <div id="exam-textarea-container">
+        <!-- textarea가 여기에 추가될 것입니다 -->
+    </div>
+<button type="button" id="test-submit">답안 제출</button>
+
+
+</body>
+</html>
