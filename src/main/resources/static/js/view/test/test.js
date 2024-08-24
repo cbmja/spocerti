@@ -41,7 +41,7 @@ $(document).ready(function() {
         var container = $('#exam-textarea-container');
         // 이미 존재하는지 확인 후 textarea 생성
         if ($('#textarea-' + subjectCode).length === 0) {
-            var textarea = '<div id="subject-' + subjectCode + '"><label>' + subjectTitle + '</label><br><textarea name="subjectText" rows="4" cols="50" data-subjectcode="'+subjectCode+'"></textarea><br></div>';
+            var textarea = '<div id="subject-' + subjectCode + '"><label>' + subjectTitle + '</label><br><textarea name="subject-code-'+subjectCode+'" rows="4" cols="50" data-subjectcode="'+subjectCode+'"></textarea><br></div>';
             container.append(textarea);
         }
     }

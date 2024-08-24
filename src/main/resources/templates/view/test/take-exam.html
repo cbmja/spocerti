@@ -26,10 +26,18 @@
     선택과목 : <span th:each="subject : ${electiveSubjects}">[ [[${subject.title}]] <input type="checkbox" class="elective-subject-checkbox" name="electiveSubjectCode" th:value="${subject.code}">]&nbsp;</span>/ [ [[${exam.vitalElectiveSubjectCnt}]] ]개 필수 선택
     <button type="button" id="select-subject-btn" th:data-elecnt="${exam.vitalElectiveSubjectCnt}">과목 선택 완료</button>
     <hr>
-    <div id="exam-textarea-container">
+    <form action="/test/submit" method="post">
+        <input type="hidden" name="examCode" th:value="${exam.code}">
+        <input type="hidden" name="examType" th:value="${type}">
+        <input type="hidden" name="examYear" th:value="${year}">
+
         <!-- textarea가 여기에 추가될 것입니다 -->
-    </div>
-<button type="button" id="test-submit">답안 제출</button>
+        <div id="exam-textarea-container">
+
+        </div>
+        <button type="submit" id="test-submit">답안 제출</button>
+    </form>
+
 
 
 </body>
