@@ -1,22 +1,27 @@
 
 $(document).ready(function() {
 
-/*시험 '선택'시 동적으로 년도 select 생성*/
+/*시험 '선택'시 동적으로 년도 select 생성*/ //ok
     $('#main-exam-select').change(function() {
-        var selectedExamCode = $(this).val();
+
+        //선택된 시험
+        var examCode = $(this).val();
+
+
         $.ajax({
             url: '/main/exam/select',
             type: 'GET',
-            data: { code: selectedExamCode } ,
+            data: { code: examCode } ,
             success: function(response) {
+
                 // response는 서버에서 반환된 연도 리스트 (List<String>)
+                // 시험 개설 년도 ~ db에 업데이트된 최신 년도 ex) ALL , 2010 , 2011 , 2012 ....
                 var yearSelect = $('#main-year-select');
 
                 // 기존의 모든 옵션 제거
                 yearSelect.empty();
 
-                // 기본 선택 옵션 추가
-                var options = '<option value="" disabled selected>년도</option>';
+                var options = '';
 
                 // 반환된 연도 리스트를 반복하며 옵션 추가
                 $.each(response, function(index, year) {
@@ -31,23 +36,25 @@ $(document).ready(function() {
             }
         });
     });
-/*시험 '선택'시 동적으로 년도 select 생성*/
+/*시험 '선택'시 동적으로 년도 select 생성*/ //ok
 
 
 
-// 시험 '검색' 시 목록 생성
+/*시험 '검색' 시 목록 생성*/ //ok
     $('#main-exam-search-btn').click(function() {
+        //검색 시험 코드
         var examCode = $('#main-exam-select').val();
-        var year = $('#main-year-select').val();
+        //검색 과목 코드
+        var examYear = $('#main-year-select').val();
 
-        if (!examCode || !year) {
+        if (!examCode || !examYear) {
             alert("시험, 년도를 모두 선택하세요.");
             return;
         }
 
         var form = {
             "examCode": examCode,
-            "year": year
+            "examYear": examYear
         };
 
         $.ajax({
@@ -63,7 +70,7 @@ $(document).ready(function() {
 
                     $.each(response, function(index, item) {
                         rows += '<tr>' +
-                                '<td style="border: 1px solid black;">' + item.year + '</td>' +
+                                '<td style="border: 1px solid black;">' + item.examYear + '</td>' +
                                 '<td style="border: 1px solid black;">' + item.examTitle + '</td>' +
                                 '<td style="border: 1px solid black;">' +
                                 '<select name="type" class="exam-type">' +
@@ -74,9 +81,9 @@ $(document).ready(function() {
                                 '<td style="border: 1px solid black;">' +
                                 '<form action="/main/exam/take">'+
                                 '<input type="hidden" name="examCode" value='+examCode+'>'+
-                                '<input type="hidden" name="examYear" value='+item.year+'>'+
+                                '<input type="hidden" name="examYear" value='+item.examYear+'>'+
                                 '<input type="hidden" name="examType" value="A">'+
-                                '<button type="submit" class="take-exam-btn">응시</button>' +
+                                '<button type="submit">응시</button>' +
                                 '</form>'+
                                 '</td>' +
                                 '</tr>';
@@ -94,18 +101,18 @@ $(document).ready(function() {
             }
         });
     });
+/*시험 '검색' 시 목록 생성*/ //ok
 
 
 
 
-
-    // type 변경시 form 값 변경
+/*type 변경시 form 값 변경*/ //ok
     $('#exam-list').on('change', '.exam-type', function() {
         var selectedType = $(this).val(); // 선택된 type 값을 가져옴
         var form = $(this).closest('tr').find('form');
         form.find('input[name="examType"]').val(selectedType); // hidden 필드 값 업데이트
     });
-
+/*type 변경시 form 값 변경*/ //ok
 
 
 

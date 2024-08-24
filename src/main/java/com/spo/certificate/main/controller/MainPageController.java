@@ -58,18 +58,18 @@ public class MainPageController {
 
         List<ExamSearch> response = new ArrayList<>();
         Exam exam = examInfoService.findByCode(Integer.parseInt(form.get("examCode")));
-        if(form.get("year").equals("ALL")){
+        if(form.get("examYear").equals("ALL")){
 
             for(int i = exam.getStartYear(); i<=exam.getUpdateYear(); i++){
                 ExamSearch examSearch = new ExamSearch();
                 examSearch.setExamTitle(exam.getTitle());
-                examSearch.setYear(i);
+                examSearch.setExamYear(i);
                 response.add(examSearch);
             }
         }else{
             ExamSearch examSearch = new ExamSearch();
             examSearch.setExamTitle(exam.getTitle());
-            examSearch.setYear(Integer.parseInt(form.get("year")));
+            examSearch.setExamYear(Integer.parseInt(form.get("examYear")));
             response.add(examSearch);
         }
 

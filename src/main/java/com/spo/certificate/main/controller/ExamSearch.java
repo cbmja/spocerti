@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class ExamSearch {
 
-    private int year;
+    private int examYear;
     private String examTitle;
 
 
