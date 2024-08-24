@@ -32,14 +32,14 @@ public class ExamTestController {
             }
         }
         System.out.println(subjectCodes);
+
         List<Answer> answers = new ArrayList<>();
         for(int i : subjectCodes){
             data.setSubjectCode(i);
-            System.out.println(data);
             answers.add(answerInfoService.findByExamCodeAndSubjectCodeAndYearAndType(data));
         }
 
-        System.out.println(answers);
+
 
 
 

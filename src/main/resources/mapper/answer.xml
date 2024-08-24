@@ -7,11 +7,11 @@
     <!--select-->
 
     <select id="findByExamCodeAndSubjectCodeAndYearAndType" parameterType="Answer" resultType="Answer">
-        SELECT * FROM answer WHERE exam_code = #{examCode} AND subject_code = #{subjectCode} AND year = #{year} AND type = #{type}
+        SELECT * FROM spocerti_ver_2.answer WHERE exam_code = #{examCode} AND subject_code = #{subjectCode} AND year = #{year} AND type = #{type}
     </select>
 
     <select id="findAll" resultType="Exam">
-        SELECT * FROM answer
+        SELECT * FROM spocerti_ver_2.answer
     </select>
     <!--select-->
 

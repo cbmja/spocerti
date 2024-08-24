@@ -7,11 +7,11 @@
 <!--select-->
 
     <select id="findByCode" parameterType="int" resultType="Exam">
-        SELECT * FROM exam WHERE code = #{code}
+        SELECT * FROM spocerti_ver_2.exam WHERE code = #{code}
     </select>
 
     <select id="findAll" resultType="Exam">
-        SELECT * FROM exam
+        SELECT * FROM spocerti_ver_2.exam
     </select>
 <!--select-->
 
