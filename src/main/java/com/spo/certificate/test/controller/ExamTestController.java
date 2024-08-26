@@ -31,6 +31,8 @@ public class ExamTestController {
         //응시한 시험 년도
         int examYear = Integer.parseInt(form.get("examYear"));
 
+        int userCode = 1;
+
 
         //응시한 과목 코드
         List<Integer> subjectCodes = new ArrayList<>();

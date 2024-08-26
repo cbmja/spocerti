@@ -12,6 +12,7 @@ public class Exam {
     private int vitalElectiveSubjectCnt;
     private int startYear;
     private int updateYear;
+    private int passingScore;
 
 
 
