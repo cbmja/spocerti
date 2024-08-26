@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spo.certificate.test.answer.mapper.AnswerDetailMapper">
+
+    <!--select-->
+
+    <select id="findByAnswerCode" parameterType="int" resultType="AnswerDetail">
+        SELECT * FROM spocerti_ver_2.answer_detail WHERE answer_code = #{answerCode}
+    </select>
+
+    <select id="findAll" resultType="Exam">
+        SELECT * FROM spocerti_ver_2.answer_detail
+    </select>
+    <!--select-->
+
+</mapper>

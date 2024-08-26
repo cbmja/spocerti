@@ -24,5 +24,12 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
 
+logging:
+  level:
+    # MyBatis 쿼리 로깅
+    com.spo.certificate: DEBUG
+    org.mybatis: DEBUG
+    org.mybatis.spring: DEBUG
+
 storage:
   receivingPath: D:\spocert\DATA\
