@@ -13,6 +13,9 @@
     <select id="findAll" resultType="Exam">
         SELECT * FROM spocerti_ver_2.exam
     </select>
+    <select id="getCode" resultType="int">
+        SELECT LAST_INSERT_ID();
+    </select>
 <!--select-->
 
 </mapper>

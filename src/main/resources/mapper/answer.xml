@@ -10,8 +10,11 @@
         SELECT * FROM spocerti_ver_2.answer WHERE exam_code = #{examCode} AND subject_code = #{subjectCode} AND year = #{year} AND type = #{type}
     </select>
 
-    <select id="findAll" resultType="Exam">
+    <select id="findAll" resultType="Answer">
         SELECT * FROM spocerti_ver_2.answer
+    </select>
+    <select id="getCode" resultType="int">
+        SELECT LAST_INSERT_ID();
     </select>
     <!--select-->
 

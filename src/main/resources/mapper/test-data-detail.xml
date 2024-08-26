@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spo.certificate.test.test.mapper.TestDataDetailMapper">
+
+
+    <!--insert-->
+    <insert id="save" parameterType="TestDataDetail">
+        INSERT INTO spocerti_ver_2.test_data_detail (test_subject_data_code,question_no,submitted_answer,result)
+        VALUES(#{testSubjectDataCode},#{questionNo},#{submittedAnswer},#{result})
+    </insert>
+    <!--insert-->
+
+    <!--select-->
+
+    <select id="findAll" resultType="Answer">
+        SELECT * FROM spocerti_ver_2.test_data_detail
+    </select>
+    <select id="getCode" resultType="int">
+        SELECT LAST_INSERT_ID();
+    </select>
+    <!--select-->
+
+</mapper>

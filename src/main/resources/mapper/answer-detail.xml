@@ -10,8 +10,11 @@
         SELECT * FROM spocerti_ver_2.answer_detail WHERE answer_code = #{answerCode}
     </select>
 
-    <select id="findAll" resultType="Exam">
+    <select id="findAll" resultType="AnswerDetail">
         SELECT * FROM spocerti_ver_2.answer_detail
+    </select>
+    <select id="getCode" resultType="int">
+        SELECT LAST_INSERT_ID();
     </select>
     <!--select-->
 
