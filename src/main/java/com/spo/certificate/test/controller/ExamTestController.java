@@ -148,7 +148,7 @@ public class ExamTestController {
 
         Map<Integer,Integer> subjectCodeAndTestSubjectCode = new HashMap<>();
 
-        String res ="[ 시험 코드: "+examCode+" ] / [ 시험 년도 : "+examYear+" ] / [ 시험 타입 : "+examType+"] / ";
+        String res ="[ 시험 코드: "+examCode+" ] / [ 시험 년도 : "+examYear+" ] / [ 시험 타입 : "+examType+"] / [ 총점 : "+totalScore+" ] / ";
         for(Integer subCode : scores.keySet()){
             res += "[ 과목 코드 : "+subCode+" / 점수 : "+scores.get(subCode)+" ]";
 
