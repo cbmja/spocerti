@@ -18,4 +18,8 @@ public class ExamSubjectInfoService {
         return sql.selectList("com.spo.certificate.test.examSubject.mapper.ExamSubjectMapper.findByExamCode", examCode);
     }
 
+    public ExamSubject findByExamCodeAndSubjectCode(ExamSubject examSubject){
+        return sql.selectOne("com.spo.certificate.test.examSubject.mapper.ExamSubjectMapper.findByExamCodeAndSubjectCode", examSubject);
+    }
+
 }

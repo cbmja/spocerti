@@ -5,8 +5,8 @@
 <mapper namespace="com.spo.certificate.test.test.mapper.TestSubjectDataMapper">
     <!--insert-->
     <insert id="save" parameterType="TestSubjectData">
-        INSERT INTO spocerti_ver_2.test_subject_data (test_data_code,subject_code,score)
-        VALUES(#{testDataCode},#{subjectCode},#{score})
+        INSERT INTO spocerti_ver_2.test_subject_data (test_data_code,subject_code,score,result)
+        VALUES(#{testDataCode},#{subjectCode},#{score},#{result})
     </insert>
     <!--insert-->
 

@@ -8,5 +8,6 @@ public interface ExamSubjectMapper {
 
 
     List<ExamSubject> findByExamCode(int examCode);
+    ExamSubject findByExamCodeAndSubjectCode(ExamSubject examSubject);
 
 }

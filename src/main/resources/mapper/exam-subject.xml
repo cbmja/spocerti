@@ -10,6 +10,10 @@
         SELECT * FROM spocerti_ver_2.exam_subject WHERE exam_code = #{examCode}
     </select>
 
+    <select id="findByExamCodeAndSubjectCode" parameterType="ExamSubject" resultType="ExamSubject">
+        SELECT * FROM spocerti_ver_2.exam_subject WHERE exam_code = #{examCode} AND subject_code = #{subjectCode}
+    </select>
+
     <select id="findAll" resultType="ExamSubject">
         SELECT * FROM spocerti_ver_2.exam_subject
     </select>

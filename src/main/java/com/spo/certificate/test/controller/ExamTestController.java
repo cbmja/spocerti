@@ -6,6 +6,8 @@ import com.spo.certificate.test.answer.service.AnswerDetailInfoService;
 import com.spo.certificate.test.answer.service.AnswerInfoService;
 import com.spo.certificate.test.exam.dto.Exam;
 import com.spo.certificate.test.exam.service.ExamInfoService;
+import com.spo.certificate.test.examSubject.dto.ExamSubject;
+import com.spo.certificate.test.examSubject.service.ExamSubjectInfoService;
 import com.spo.certificate.test.test.dto.TestData;
 import com.spo.certificate.test.test.dto.TestDataDetail;
 import com.spo.certificate.test.test.dto.TestSubjectData;
@@ -28,6 +30,7 @@ public class ExamTestController {
     private final AnswerInfoService answerInfoService;
     private final AnswerDetailInfoService answerDetailInfoService;
     private final ExamInfoService examInfoService;
+    private final ExamSubjectInfoService examSubjectInfoService;
 
     private final TestDataSaveService testDataSaveService;
     private final TestSubjectDataSaveService testSubjectDataSaveService;
@@ -98,6 +101,7 @@ public class ExamTestController {
         System.out.println("제출 답안 : "+submittedAnswer);
         System.out.println("답안 정보 : "+answerDetail);
 
+        //과목코드 , 점수
         Map<Integer,Integer> scores = new HashMap<>();
 
         int totalScore = 0;
@@ -152,8 +156,15 @@ public class ExamTestController {
         for(Integer subCode : scores.keySet()){
             res += "[ 과목 코드 : "+subCode+" / 점수 : "+scores.get(subCode)+" ]";
 
+
+            ExamSubject examSubject = new ExamSubject();
+            examSubject.setExamCode(examCode);
+            examSubject.setSubjectCode(subCode);
+            examSubject = examSubjectInfoService.findByExamCodeAndSubjectCode(examSubject);
+
             tsd.setSubjectCode(subCode);
             tsd.setScore(scores.get(subCode));
+            tsd.setResult(scores.get(subCode) >= examSubject.getPassingScore() ? "P":"F");
             testSubjectDataSaveService.save(tsd);
             subjectCodeAndTestSubjectCode.put(subCode,testSubjectDataSaveService.getCode());
             System.out.println(subjectCodeAndTestSubjectCode);

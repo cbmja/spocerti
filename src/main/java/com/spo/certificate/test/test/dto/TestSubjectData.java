@@ -9,6 +9,7 @@ public class TestSubjectData {
     private int testDataCode;
     private int subjectCode;
     private int score;
+    private String result;
 
 
 }
