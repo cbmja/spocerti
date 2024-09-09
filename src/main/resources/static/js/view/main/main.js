@@ -70,15 +70,15 @@ $(document).ready(function() {
 
                     $.each(response, function(index, item) {
                         rows += '<tr>' +
-                                '<td style="border: 1px solid black;">' + item.examYear + '</td>' +
-                                '<td style="border: 1px solid black;">' + item.examTitle + '</td>' +
-                                '<td style="border: 1px solid black;">' +
+                                '<td>' + item.examYear + '</td>' +
+                                '<td>' + item.examTitle + '</td>' +
+                                '<td>' +
                                 '<select name="type" class="exam-type">' +
                                 '<option value="A" selected>A</option>' +
                                 '<option value="B">B</option>' +
                                 '</select>' +
                                 '</td>' +
-                                '<td style="border: 1px solid black;">' +
+                                '<td>' +
                                 '<form action="/main/exam/take">'+
                                 '<input type="hidden" name="examCode" value='+examCode+'>'+
                                 '<input type="hidden" name="examYear" value='+item.examYear+'>'+
@@ -91,7 +91,7 @@ $(document).ready(function() {
 
                     tbody.append(rows);
                 } else {
-                    var noResultRow = '<tr><td colspan="4" style="border: 1px solid black;">검색 결과가 없습니다.</td></tr>';
+                    var noResultRow = '<tr><td colspan="4">검색 결과가 없습니다.</td></tr>';
                     tbody.append(noResultRow);
                 }
             },

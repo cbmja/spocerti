@@ -1,0 +1,13 @@
+.exam-list{
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 100%;
+}
+
+.exam-list thead th{
+    border: 1px solid black;
+}
+
+.exam-list tbody td{
+    border: 1px solid black;
+}
