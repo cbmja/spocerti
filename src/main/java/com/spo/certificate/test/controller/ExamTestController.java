@@ -1,41 +1,14 @@
 package com.spo.certificate.test.controller;
 
-import com.spo.certificate.test.answer.dto.Answer;
-import com.spo.certificate.test.answer.dto.AnswerDetail;
-import com.spo.certificate.test.answer.service.AnswerDetailInfoService;
-import com.spo.certificate.test.answer.service.AnswerInfoService;
-import com.spo.certificate.test.exam.dto.Exam;
-import com.spo.certificate.test.exam.service.ExamInfoService;
-import com.spo.certificate.test.examSubject.dto.ExamSubject;
-import com.spo.certificate.test.examSubject.service.ExamSubjectInfoService;
-import com.spo.certificate.test.test.dto.TestData;
-import com.spo.certificate.test.test.dto.TestDataDetail;
-import com.spo.certificate.test.test.dto.TestSubjectData;
-import com.spo.certificate.test.test.service.TestDataDetailSaveService;
-import com.spo.certificate.test.test.service.TestDataSaveService;
-import com.spo.certificate.test.test.service.TestSubjectDataSaveService;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.*;
-import java.util.stream.Collectors;
 
 @Controller
 @RequiredArgsConstructor
 public class ExamTestController {
-
-    private final AnswerInfoService answerInfoService;
-    private final AnswerDetailInfoService answerDetailInfoService;
-    private final ExamInfoService examInfoService;
-    private final ExamSubjectInfoService examSubjectInfoService;
-
-    private final TestDataSaveService testDataSaveService;
-    private final TestSubjectDataSaveService testSubjectDataSaveService;
-    private final TestDataDetailSaveService testDataDetailSaveService;
-
+/*
 
     @PostMapping("/test/submit")
     @ResponseBody
@@ -210,10 +183,8 @@ public class ExamTestController {
 
         return res;
 
-
-
-
     }
+*/
 
 
 }

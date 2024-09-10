@@ -2,15 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.spo.certificate.test.test.mapper.TestSubjectDataMapper">
-    <!--insert-->
-    <insert id="save" parameterType="TestSubjectData">
-        INSERT INTO spocerti_ver_2.test_subject_data (test_data_code,subject_code,score,result)
-        VALUES(#{testDataCode},#{subjectCode},#{score},#{result})
-    </insert>
-    <!--insert-->
+<mapper namespace="com.spo.certificate._mapper.test.TestSubjectDataMapper">
 
-    <!--select-->
+    <insert id="save" parameterType="TestSubjectData">
+        INSERT INTO spocerti_ver_2.test_subject_data (test_data_code,subject_code,test_subject_score,test_subject_result)
+        VALUES(#{testDataCode},#{subjectCode},#{testSubjectScore},#{testSubjectResult})
+    </insert>
+
     <select id="findAll" resultType="TestSubjectData">
         SELECT * FROM spocerti_ver_2.test_subject_data
     </select>
@@ -18,6 +16,5 @@
     <select id="getCode" resultType="int">
         SELECT LAST_INSERT_ID();
     </select>
-    <!--select-->
 
 </mapper>

@@ -2,9 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.spo.certificate.test.examSubject.mapper.ExamSubjectMapper">
-
-    <!--select-->
+<mapper namespace="com.spo.certificate._mapper.exam.ExamSubjectMapper">
 
     <select id="findByExamCode" parameterType="int" resultType="ExamSubject">
         SELECT * FROM spocerti_ver_2.exam_subject WHERE exam_code = #{examCode}
@@ -17,9 +15,9 @@
     <select id="findAll" resultType="ExamSubject">
         SELECT * FROM spocerti_ver_2.exam_subject
     </select>
+
     <select id="getCode" resultType="int">
         SELECT LAST_INSERT_ID();
     </select>
-    <!--select-->
 
 </mapper>
