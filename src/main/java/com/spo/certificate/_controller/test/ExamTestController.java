@@ -38,6 +38,8 @@ public class ExamTestController {
     @ResponseBody
     public String gradingTest(@RequestParam Map<String,String> form){
 
+        System.out.println(form+";;;;;;;;;");
+
         //응시한 시험 코드
         int examCode = Integer.parseInt(form.get("examCode"));
         Exam exam = examService.findByExamCode(examCode);
@@ -134,12 +136,14 @@ public class ExamTestController {
 
 
         TestData testData = new TestData();
-        testData.setUserCode(userCode);
+        testData.setUserCode(1);
         testData.setExamCode(examCode);
         testData.setExamYear(examYear);
         testData.setExamType(examType);
         testData.setTotalScore(totalScore);
         testData.setTestResult(exam.getExamPassingScore() <= totalScore ? "P":"F");
+
+        System.out.println(testData+"///////////");
 
         testDataService.save(testData);
         int testDatacode = testDataService.getCode();
