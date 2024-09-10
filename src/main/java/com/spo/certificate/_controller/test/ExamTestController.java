@@ -136,7 +136,7 @@ public class ExamTestController {
 
 
         TestData testData = new TestData();
-        testData.setUserCode(1);
+        testData.setUserCode(userCode);
         testData.setExamCode(examCode);
         testData.setExamYear(examYear);
         testData.setExamType(examType);

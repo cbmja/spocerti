@@ -5,8 +5,8 @@
 <mapper namespace="com.spo.certificate._mapper.test.TestDataMapper">
 
     <insert id="save" parameterType="TestData">
-        INSERT INTO spocerti_ver_2.test_data (user_code,exam_code,exam_year,exam_type,total_score,test_result)
-        VALUES(#{userCode},#{examCode},#{examYear},#{examType},#{totalScore},#{testResult})
+        INSERT INTO spocerti_ver_2.test_data (user_code,exam_year,exam_type,total_score,test_result,exam_code)
+        VALUES(#{userCode},#{examYear},#{examType},#{totalScore},#{testResult},#{examCode})
     </insert>
 
     <select id="findAll" resultType="TestData">

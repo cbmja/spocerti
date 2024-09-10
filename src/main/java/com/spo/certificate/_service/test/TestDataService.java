@@ -13,7 +13,7 @@ public class TestDataService {
     private final SqlSessionTemplate sql;
 
     public int save(TestData testData){
-        return sql.insert("com.spo.certificate._mapper.test.TestDataMapper.save");
+        return sql.insert("com.spo.certificate._mapper.test.TestDataMapper.save",testData);
     }
     public List<TestData> findAll(){
         return sql.selectList("com.spo.certificate._mapper.test.TestDataMapper.findAll");
