@@ -11,7 +11,7 @@ public class TestData {
     private int userCode;
     private int examCode;
     private int examYear;
-    private int examType;
+    private String examType;
     private LocalDateTime testDate;
     private int totalScore;
     private String testResult;
